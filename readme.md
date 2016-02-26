@@ -2,6 +2,21 @@
 
 The Product Management Platform for Building Better Products
 
+## Communicate throughout the entire process
+
+### Run a better beta
+
+Deliver more polished products by working with a feature’s already-engaged supporters to test and provide ongoing feedback so you can iterate before launch
+
+### Drive new feature adoption
+
+Don’t let new features get lost - use supporters as targeted marketing lists when you roll out new capabilities
+
+### Stay in tune with development teams
+
+Automate the process using integrations with issue tracking and development tools like Github.
+
+
 ## Build your roadmap with real data
 
 ### Prioritize the features that matter
