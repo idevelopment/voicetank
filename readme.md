@@ -1,4 +1,4 @@
-# Voice talk
+# Voice tank
 
 The Product Management Platform for Building Better Products
 
@@ -20,11 +20,11 @@ Automate the process using integrations with issue tracking and development tool
 ## Build your roadmap with real data
 
 ### Prioritize the features that matter
-Define your roadmap with data science and statistical significance, using metrics like revenue and customer satisfaction instead of vote counts
+Define your roadmap with data science and statistical significance.
 
 ###Validate your own ideas
 
-See how your products plans stack up against user-generated ideas and customer feedback with our SmartVote™ technology
+See how your products plans stack up against user-generated ideas and customer feedback.
 
 ###Build the business case
 
