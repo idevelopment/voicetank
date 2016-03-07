@@ -1,27 +1,43 @@
-# Laravel PHP Framework
+# Voice tank
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+The Product Management Platform for Building Better Products
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Communicate throughout the entire process
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Run a better beta
+
+Deliver more polished products by working with a feature’s already-engaged supporters to test and provide ongoing feedback so you can iterate before launch
+
+### Drive new feature adoption
+
+Don’t let new features get lost - use supporters as targeted marketing lists when you roll out new capabilities
+
+### Stay in tune with development teams
+
+Automate the process using integrations with issue tracking and development tools like Github.
+
+
+## Build your roadmap with real data
+
+### Prioritize the features that matter
+Define your roadmap with data science and statistical significance.
+
+###Validate your own ideas
+
+See how your products plans stack up against user-generated ideas and customer feedback.
+
+###Build the business case
+
+Strengthen your business case with ROI and estimated customer impact using information from your CRM or internal databases.
 
 ## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Documentation for the application can be found on the [Support website](http://laravel.com/docs).
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+The contribution guide can be found in the [here](http://laravel.com/docs/contributions).
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Voice talk is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
