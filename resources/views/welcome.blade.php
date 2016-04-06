@@ -35,4 +35,7 @@
 
                 </div>
             </div>
+            <div class="clearfix">&nbsp;</div>
+
+            
 @endsection

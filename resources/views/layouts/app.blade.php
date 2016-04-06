@@ -38,8 +38,8 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/home') }}">FAQ</a></li>
+                    <li><a href="{{ url('') }}">Home</a></li>
+                    <li><a href="{{ url('faq') }}">FAQ</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -92,16 +92,22 @@
            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
          </div>
          <div class="clearfix">&nbsp;</div>
-        <ul class="list-unstyled">
-            <li><a href="fsdf">Group 1</a></li>
-            <li><a href="fsdf">Group 2</a></li>
-            <li><a href="fsdf">Group 3</a></li>
-            <li><a href="fsdf">Group 4</a></li>
-            <li><a href="fsdf">Group 5</a></li>
-            <li><a href="fsdf">Group 6</a></li>
-            <li><a href="fsdf">Group 7</a></li>
-            <li><a href="fsdf">Group 8</a></li>
-        </ul>
+    <ul class="list-unstyled category_list">
+       <li>
+        <span class="badge pull-right">116</span>
+        <a href="#">Group 1</a><br>
+       </li>
+       <li>
+        <span class="badge pull-right">16</span>
+        <a href="#">Group 2</a><br>
+       </li>
+       <li>
+        <span class="badge pull-right">16</span>
+        <a href="#">Group 3</a><br>
+       </li>                
+
+
+            </ul>
         </form>
        </div>
       </div>
@@ -111,13 +117,14 @@
 
 <footer id="footer">
  <div class="row">
-  <div class="col-md-6">&copy; 2016 iDevelopment - All rights reserved</div>
+  <div class="text-center" style="padding-bottom: 10px;">&copy; 2016 iDevelopment - All rights reserved</div>
  </div>
 </footer>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>
