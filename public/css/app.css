@@ -11,6 +11,9 @@ html, body {
   height: 100%;
   box-sizing: border-box; }
 
+.row-fluid + .row-fluid {
+  margin-top: 30px; }
+
 a {
   color: #3A7EA2; }
 
