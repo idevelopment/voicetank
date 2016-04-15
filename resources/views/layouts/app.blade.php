@@ -55,6 +55,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><i href="#"><i class="fa fa-btn fa-cogs"></i>Account configuration</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
