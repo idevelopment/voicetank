@@ -157,6 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        EricMakesStuff\ServerMonitor\ServerMonitorServiceProvider::class,
 
     ],
 
