@@ -30,7 +30,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                    <i class="fa fa-microphone"></i> Voicetank
                 </a>
             </div>
@@ -55,6 +55,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><i href="#"><i class="fa fa-btn fa-cogs"></i>Account configuration</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
