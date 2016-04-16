@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Silber\Bouncer\Database\HasRolesAndAbilities;
 
 /**
  * Class User
@@ -17,6 +18,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
+    use HasRolesAndAbilities;
+
     /**
      * The attributes that are mass assignable.
      *

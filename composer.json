@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "spatie/laravel-backup": "^3.4",
         "barryvdh/laravel-debugbar": "^2.2",
-        "ericmakesstuff/laravel-server-monitor": "^1.2"
+        "ericmakesstuff/laravel-server-monitor": "^1.2",
+        "silber/bouncer": "^0.1.7"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
