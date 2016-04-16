@@ -5,25 +5,25 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Labels
+ * Class Faq
  * @package App
- *
- * @property string, name
- * @property string, color
+ * 
+ * @property string, question
+ * @property string, answer
  */
-class Labels extends Model
+class Faq extends Model
 {
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name', 'color'];
+    protected $fillable = ['question', 'answer'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['updated_at', 'created_at'];
+    protected $hidden = ['created_at', 'updated_at'];
 }

@@ -20,6 +20,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Faq::class, function (Faker\Generator $faker) {
+    return [
+        'question' => $faker->word,
+        'answer'   => $faker->text(),
+    ];
+});
+
 $factory->define(App\Labels::class, function (Faker\Generator $faker) {
     return [
         'name'  => 'Feature',
