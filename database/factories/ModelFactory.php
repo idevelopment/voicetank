@@ -22,8 +22,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Faq::class, function (Faker\Generator $faker) {
     return [
-        'question' => $faker->word,
-        'answer'   => $faker->text(),
+        'question' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'answer'   => $faker->text($maxNbChars = 200) ,
     ];
 });
 
