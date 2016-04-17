@@ -36,6 +36,7 @@
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
+         @if (Auth::guest())
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('') }}">Home</a></li>
@@ -45,20 +46,30 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                @if (Auth::guest())
+               
                     <li><a href="{{ url('/login') }}" title="Login"><i class="fa fa-user fa-lg"></i></a></li>
                     <li><a href="{{ url('/register') }}" title="Register"><i class="fa fa-user-plus fa-lg"></i></a></li>
+                </ul>
                 @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
+            <!-- Left Side Of Navbar -->
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url('') }}">Home</a></li>
+                <li><a href="{{ url('faq') }}">FAQ</a></li>
+            </ul>
 
-                        <ul class="dropdown-menu" role="menu">
-                            <li><i href="#"><i class="fa fa-btn fa-cogs"></i>Account configuration</a></li>
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                        </ul>
-                    </li>
+            <!-- Right Side Of Navbar -->
+ <ul class="nav navbar-nav navbar-right">
+  <!-- Authentication Links -->
+  <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}
+   <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url('/notifications') }}">Notifications</a></li>
+            <li><a href="{{ url('/user') }}">User profile</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{ url('/logout') }}"> Logout</a></li>
+          </ul>
+        </li>
                 @endif
             </ul>
         </div>
