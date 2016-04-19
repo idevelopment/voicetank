@@ -159,6 +159,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
         EricMakesStuff\ServerMonitor\ServerMonitorServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -207,6 +208,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Bouncer'   => Silber\Bouncer\BouncerFacade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
