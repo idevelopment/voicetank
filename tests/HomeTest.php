@@ -33,4 +33,3 @@ class HomeTest extends TestCase
             ->seeStatusCode(200);
     }
 }
-
