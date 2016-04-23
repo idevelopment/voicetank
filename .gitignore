@@ -6,6 +6,7 @@ Homestead.json
 .env
 .composer.lock
 vendor/
+.idea
 node_modules/
 
 # Laravel 4 specific
@@ -18,7 +19,5 @@ storage/
 .env.*.php
 .env.php
 .env
-/.idea
-.idea
 .env.example
 
