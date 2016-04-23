@@ -18,5 +18,6 @@ storage/
 .env.*.php
 .env.php
 .env
+.idea
 .env.example
 
