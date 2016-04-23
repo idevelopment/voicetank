@@ -1,4 +1,7 @@
 language: php
+sudo: required
+env:
+  - DB_CONNECTION=sqlite
 
 services:
  - mysql
