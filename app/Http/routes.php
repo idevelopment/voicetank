@@ -28,6 +28,11 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+
+    // Contact routes
+    Route::get('/contact', 'ContactController@view');
+    Route::post('/contact', 'ContactController@send');
+
     Route::get('/home', 'HomeController@index');
 
     // FAQ routes.
