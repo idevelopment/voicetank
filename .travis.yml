@@ -19,8 +19,8 @@ before_script:
   - composer self-update
   - touch database/database.sqlite
   - composer install
+  - php artisan key:generate
   - php artisan migrate --database=sqlite --force
-  -
 
 script:
   - phpunit -c phpunit.xml
