@@ -35,6 +35,9 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 
+    // Settings
+    Route::get('/settings', 'SettingsController@index');
+
     // FAQ routes.
     Route::get('/faq', 'FaqController@index')->name('faq.index');
 });
