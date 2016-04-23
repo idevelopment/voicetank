@@ -26,13 +26,17 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+
+    // Contact routes
+    Route::get('/contact', 'ContactController@view');
+    Route::post('/contact', 'ContactController@send');
+
     Route::get('/home', 'HomeController@index');
+
+    // Settings
+    Route::get('/settings', 'SettingsController@index');
 
     // FAQ routes.
     Route::get('/faq', 'FaqController@index')->name('faq.index');

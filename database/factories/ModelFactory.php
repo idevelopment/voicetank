@@ -33,3 +33,11 @@ $factory->define(App\Labels::class, function (Faker\Generator $faker) {
         'color' => '#000000',
     ];
 });
+
+$factory->define(App\Categories::class, function(Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+        'Parent' => $faker->numberBetween(0, 100),
+        'ParentGroup' => $faker->numberBetween(0, 100)
+    ];
+});
