@@ -6,14 +6,15 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #222;
-  background: #fbfbfb
+  background: #fbfbfb;
+  padding-top: 40px;
 }
 
 html, body {
   height: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 a {
@@ -25,7 +26,7 @@ a, button {
 }
 
 a, button, .btn {
-  outline: none !important
+  outline: none !important;
 }
 
 a:hover,
