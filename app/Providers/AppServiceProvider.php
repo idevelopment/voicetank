@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
             Bouncer::allow('Manager')->to('');
             Bouncer::allow('User')->to('');
             Bouncer::allow('blocked')->to('');
+            Bouncer::allow('active')->to('');
         });
     }
 

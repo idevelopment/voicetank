@@ -26,7 +26,7 @@ class UserController extends Controller
     public function index()
     {
         $data['query'] = User::all();
-        return view('auth.index', $data);
+        return view('users.index', $data);
     }
 
     /**
@@ -37,7 +37,7 @@ class UserController extends Controller
     public function registerView()
     {
         // TODO create view
-        return view('backend.register');
+        return view('users.register');
     }
 
     public function ProfileEditView($id)
@@ -45,7 +45,7 @@ class UserController extends Controller
         // TODO: create view.
 
         $data['query'] = User::find($id);
-        return view('auth.edit', $data);
+        return view('users.edit', $data);
     }
 
     /**
@@ -109,8 +109,8 @@ class UserController extends Controller
      */
     public function userDestroy($id)
     {
-        User::destroy($id);
         User::find($id)->roles()->sync([]);
+        User::destroy($id);
 
         session()->flash('message', 'The user is deleted.');
 
