@@ -11,7 +11,7 @@ class CountrySeeder extends Seeder {
      */
     public function run()
     {
-        DB::table('Countries')->insert([
+        DB::table('countries')->insert([
 
             // Countries that begin with A
             ['country' => 'Afghanistan'],
