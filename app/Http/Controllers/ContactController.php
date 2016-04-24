@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Countries;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,7 +18,8 @@ class ContactController extends Controller
      */
     public function view()
     {
-        $data['title'] = 'Contact';
+        $data['title']     = 'Contact';
+        $data['countries'] = Countries::all();
         return view('frontend.contact', $data);
     }
 
