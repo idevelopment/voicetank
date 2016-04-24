@@ -1,8 +1,7 @@
-@extends('layouts.faq')
+@extends('layouts.onecol')
 
 @section('content')
     <div class="row">
-     <div class="col-md-12">
      <div class="well well-sm">
       <form action="{{url('contact')}}" method="post" class="form-horizontal">
       <div class="form-group">
@@ -93,7 +92,6 @@
          </div>
                 </form>
             </div>
-        </div>
     </div>
 
        
