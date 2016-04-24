@@ -40,4 +40,9 @@ Route::group(['middleware' => 'web'], function () {
 
     // FAQ routes.
     Route::get('/faq', 'FaqController@index')->name('faq.index');
+    Route::get('/faq/delete/{id}', 'FaqController@destroy')->name('faq.destroy');
+    Route::get('/faq/edit/{id}', 'FaqController@edit')->name('faq.edit');
+    Route::post('/faq/edit/{id}', 'FaqController@update')->name('faq.update');
+    Route::get('/faq/create', 'FaqController@create')->name('faq.create');
+    Route::post('/faq/create', 'FaqController@store')->name('faq.store');
 });

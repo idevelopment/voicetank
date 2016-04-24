@@ -19,7 +19,7 @@ class FaqController extends Controller
     publicqController constructor.
      */ function __construct()
     {
-        $authControllers = ['create'];
+        $authControllers = ['create', 'destroy', 'edit', 'update', 'store'];
         $this->middleware('auth', ['only' => $authControllers]);
     }
 
@@ -59,17 +59,6 @@ class FaqController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -77,7 +66,8 @@ class FaqController extends Controller
      */
     public function edit($id)
     {
-        return view('backend.faq.edit');
+        $data['query'] = Faq::find($id);
+        return view('backend.faq.edit', $data);
     }
 
     /**
