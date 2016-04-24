@@ -12,10 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-     factory(App\Faq::class, 10)->create();
+        factory(App\Faq::class, 10)->create();
 
         Model::unguard();
         $this->call(userTableSeed::class);
+        $this->call(CountrySeeder::class);
         Model::reguard();
     }
 }

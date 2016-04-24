@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ContactTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+    
     /**
      * GET: /contact
      *

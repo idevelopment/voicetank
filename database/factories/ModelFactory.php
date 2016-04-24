@@ -27,6 +27,10 @@ $factory->define(App\Faq::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Countries::class, function (Faker\Generator $faker) {
+    return [ 'county' => $faker->country ];
+});
+
 $factory->define(App\Labels::class, function (Faker\Generator $faker) {
     return [
         'name'  => 'Feature',
