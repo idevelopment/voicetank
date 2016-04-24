@@ -1,5 +1,10 @@
 # Voice tank
 
+[![GitHub release](https://img.shields.io/github/release/idevelopment/voicetank.svg)]()
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)]()
+[![Build Status](https://travis-ci.org/idevelopment/voicetank.svg?branch=master)](https://travis-ci.org/idevelopment/voicetank)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/ee669024-5384-4f53-86be-f8511fa164d1/mini.png)](https://insight.sensiolabs.com/projects/ee669024-5384-4f53-86be-f8511fa164d1)
+
 The Product Management Platform for Building Better Products
 
 ## Versioning
