@@ -35,6 +35,15 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 
+    // User routes.
+    Route::get('/users', 'UserController@index')->name('users.index');
+    Route::get('/users/register', 'UserController@registerView')->name('name.register');
+    Route::get('/users/edit/{id}', 'UserController@ProfileEditView')->name('users.edit');
+    Route::post('/users/edit/{id}', 'UserController@ProfileEditPost')->name('users.update');
+    Route::get('/users/block/{id}', 'UserController@block')->name('users.block');
+    Route::get('/users/unblock/{id}', 'UserController@unblock')->name('users.unblock');
+    Route::get('/users/delete/{id}', 'UserController@userDestroy')->name('users.destroy');
+
     // Settings
     Route::get('/settings', 'SettingsController@index');
 
