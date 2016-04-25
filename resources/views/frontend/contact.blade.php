@@ -1,7 +1,7 @@
-@extends('layouts.onecol')
+@extends('layouts.application')
 
 @section('content')
-    <div class="row">
+    <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
      <div class="well well-sm">
       <form action="{{url('contact')}}" method="post" class="form-horizontal">
       <div class="form-group">
