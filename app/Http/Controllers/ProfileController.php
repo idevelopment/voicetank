@@ -19,20 +19,22 @@ class ProfileController extends Controller
     }
 
     /**
-     * The update view for the user
+     * Get the profile page.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function AccountEdit()
+    public function profile()
     {
-        $userId = auth()->user()->id;
-        $data['user'] = User::find($userId);
-
-        return view('profile.edit', $data);
+        $id = auth()->user()->id;
+        $data['user'] = User::find($id);
+        return view('auth.profile', $data);
     }
 
     /**
      * Update the account in the database.
      *
      * @param Requests\ProfileValidator $input
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function UpdateAccount(Requests\ProfileValidator $input)
     {

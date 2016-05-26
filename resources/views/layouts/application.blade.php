@@ -72,7 +72,7 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ url('/notifications') }}">Notifications</a></li>
-                        <li><a href="{{ url('/user') }}">User profile</a></li>
+                        <li><a href="{{ url('/account') }}">User profile</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{ url('/logout') }}"> Logout</a></li>
                     </ul>

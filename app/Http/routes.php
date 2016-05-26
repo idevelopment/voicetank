@@ -44,7 +44,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/users/unblock/{id}', 'UserController@unblock')->name('users.unblock');
     Route::get('/users/delete/{id}', 'UserController@userDestroy')->name('users.destroy');
 
-    Route::get('/account/update', 'ProfileController@AccountEdit');
+    // Profile routes.
+    Route::get('/account', 'ProfileController@profile');
     Route::post('/account/update', 'ProfileController@UpdateAccount');
 
     // Settings
