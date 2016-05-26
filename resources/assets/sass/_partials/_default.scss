@@ -1,37 +1,41 @@
 html {
-  overflow-y: scroll
+  overflow-y: scroll;
 }
 
 body {
+  background: $default-white;
+  color: $default-black;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  color: #222;
-  background: #fbfbfb;
   padding-top: 40px;
 }
 
-html, body {
-  height: 100%;
+html,
+body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  height: 100%;
 }
 
 a {
-  color: #3A7EA2;
+  color: $default-blue;
 }
 
-a, button {
-  color: #3A7EA2
+a,
+button {
+  color: $default-blue;
 }
 
-a, button, .btn {
+a,
+button,
+.btn {
   outline: none !important;
 }
 
 a:hover,
 a:focus {
-  color: #282828;
+  color: $default-white-black;
 }
 
 h3 a {
