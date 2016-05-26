@@ -25,7 +25,9 @@ class UserController extends Controller
 
     public function index()
     {
-        $data['query'] = User::all();
+        $data['active']  = User::paginate(15);
+        $data['blocked'] = User::paginate(15);
+
         return view('auth.index', $data);
     }
 
