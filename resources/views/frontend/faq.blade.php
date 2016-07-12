@@ -14,10 +14,10 @@
 
                                 @if(Auth::check())
                                     <div class="btn-group pull-right">
-                                        <a href="" class="btn btn-xs btn-danger">
+                                        <a href="{{ route('faq.edit', ['id' => $data->id]) }}" class="btn btn-xs btn-danger">
                                             <span class="fa fa-btn fa-pencil"></span>
                                         </a>
-                                        <a href="" class="btn btn-xs btn-danger">
+                                        <a href="{{ route('faq.destroy', ['id' => $data->id]) }}" class="btn btn-xs btn-danger">
                                             <span class="fa fa-btn fa-close"></span>
                                         </a>
                                     </div>
