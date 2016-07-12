@@ -45,6 +45,7 @@
                     <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('') }}">Home</a></li>
+                <li><a href="">Ideas</a></li>
                 <li><a href="{{ url('faq') }}">FAQ</a></li>
                 <li><a href="{{ url('contact') }}">Contact</a></li>
             </ul>
@@ -60,6 +61,7 @@
                     <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('') }}">Home</a></li>
+                <li><a href="">Ideas</a></li>
                 <li><a href="{{ url('faq') }}">FAQ</a></li>
                 <li><a href="{{ url('contact') }}">Contact</a></li>
             </ul>

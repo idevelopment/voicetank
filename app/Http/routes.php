@@ -48,6 +48,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/account', 'ProfileController@profile');
     Route::post('/account/update', 'ProfileController@UpdateAccount');
 
+    // Idea routes
+    Route::get('/ideas', 'IdeaController@index')->name('idea.index');
+
     // Settings
     Route::get('/settings', 'SettingsController@index');
 
