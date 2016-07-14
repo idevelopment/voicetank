@@ -1,0 +1,61 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: $default-white;
+  color: $default-black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  padding-top: 40px;
+}
+
+html,
+body {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+a {
+  color: $default-blue;
+}
+
+a,
+button {
+  color: $default-blue;
+}
+
+a,
+button,
+.btn {
+  outline: none !important;
+}
+
+a:hover,
+a:focus {
+  color: $default-white-black;
+}
+
+h3 a {
+  color: $black;
+}
+
+.navbar,
+.navbar-default {
+  background-color: $white;
+}
+
+.panel .panel-heading {
+  background: #eee;
+}
+
+.list_a,
+.list_b,
+.list_c,
+.list_d {
+  margin-left: 0;
+  list-style: none;
+  padding-left: 16px;
+}

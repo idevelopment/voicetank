@@ -1,42 +1,22 @@
 # Voice tank
 
+[![GitHub release](https://img.shields.io/github/release/idevelopment/voicetank.svg)]()
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)]()
+[![Build Status](https://travis-ci.org/idevelopment/voicetank.svg?branch=master)](https://travis-ci.org/idevelopment/voicetank)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/ee669024-5384-4f53-86be-f8511fa164d1/mini.png)](https://insight.sensiolabs.com/projects/ee669024-5384-4f53-86be-f8511fa164d1)
+
 The Product Management Platform for Building Better Products
 
-## Communicate throughout the entire process
+## Versioning
+For transparency into our release cycle and in striving to maintain backward compatibility,
+this repo is maintained under the [Semantic Versioning guidelines](http://semver.org/).
+Sometimes we screw up, but we'll adhere to those rules whenever possible.
 
-### Run a better beta
+## Security Vulnerabilities
 
-Deliver more polished products by working with a feature’s already-engaged supporters to test and provide ongoing feedback so you can iterate before launch
-
-### Drive new feature adoption
-
-Don’t let new features get lost - use supporters as targeted marketing lists when you roll out new capabilities
-
-### Stay in tune with development teams
-
-Automate the process using integrations with issue tracking and development tools like Github.
-
-
-## Build your roadmap with real data
-
-### Prioritize the features that matter
-Define your roadmap with data science and statistical significance.
-
-###Validate your own ideas
-
-See how your products plans stack up against user-generated ideas and customer feedback.
-
-###Build the business case
-
-Strengthen your business case with ROI and estimated customer impact using information from your CRM or internal databases.
-
-## Official Documentation
-
-Documentation for the application can be found on the [Support website](http://laravel.com/docs).
-
-## Contributing
-
-The contribution guide can be found in the [here](http://laravel.com/docs/contributions).
+If you discover a security vulnerability within Voicetank,
+please send an e-mail to Idevelopment at info@idevelopment.be.
+All security vulnerabilities will be promptly addressed.
 
 ## License
 

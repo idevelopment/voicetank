@@ -1,45 +1,53 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.application')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('content')
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header" style="margin-top: -10px; border-bottom: 0px;">
+                <h2>Welcome to voicetalk Feedback!</h2>
+            </div>
+            <div class="clearfix">&nbsp;</div>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+            <p>This site is the most effective place to share your feature requests and ideas for improving our products and services.<br />
+                Our development teams regularly review the ideas and will get in touch with our contributors in case we need more information.
+            </p>
+        </div>
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"></div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Recently updated ideas</div>
+                <div class="panel-body">
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+                    <div class="idea_item">
+                        <h3><a href="#">Revolution has begun!</a></h3>
+                        <div>
+                            <div class="toolbar clearfix">
+                                <span class="label label-success">Completed</span>&nbsp; Updated on 05/04/2016 - <strong><a href="#">group 1</a></strong>
+                            </div>
+                        </div>
+                    </div>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+                    <div class="idea_item">
+                        <h3><a href="#">Revolution has begun!</a></h3>
+                        <div>
+                            <div class="toolbar clearfix">
+                                <span class="label label-success">Completed</span>&nbsp; Updated on 05/04/2016 - <strong><a href="#">group 1</a></strong>
+                            </div>
+                        </div>
+                    </div>
 
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+                    <div class="idea_item">
+                        <h3><a href="#">Revolution has begun!</a></h3>
+                        <div>
+                            <div class="toolbar clearfix">
+                                <span class="label label-success">Completed</span>&nbsp; Updated on 05/04/2016 - <strong><a href="#">group 1</a></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </body>
-</html>
+        <div class="clearfix">&nbsp;</div>
+@endsection

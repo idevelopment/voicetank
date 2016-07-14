@@ -1,0 +1,91 @@
+.idea_item {
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+}
+
+.idea_item a:hover {
+  color: #282828;
+}
+
+.idea_item h3 {
+  margin: 0 0 10px;
+}
+
+.idea_item .toolbar {
+  padding: 8px 0;
+  border-width: 1px 0;
+  border-style: dashed;
+  border-color: #ddd;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+
+.idea_item .toolbar_sep {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  vertical-align: -1px;
+  background: #ccc;
+  margin: 0 6px;
+}
+
+.category_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category_list li {
+  padding: 0 8px 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #dcdcdc;
+  line-height: normal;
+}
+
+.category_list small {
+  font-size: 11px;
+  color: #9b9b9b;
+}
+
+.comments_section .media-object {
+  width: 48px;
+  height: 48px;
+}
+
+.comments_section .media-heading {
+  margin-bottom: 2px;
+  overflow: hidden;
+}
+
+.comments_section .media-heading h4 {
+  font-size: 13px;
+  display: inline-block;
+  margin: 0;
+}
+
+.comments_section .media-heading .comment_act {
+  float: right;
+  margin: 0 4px 0 0;
+}
+
+.comments_section .media-heading .comment_act a {
+  opacity: .6;
+}
+
+.comments_section .media-heading .comment_act a:hover {
+  opacity: 1;
+}
+
+.comments_section form {
+  padding: 10px;
+  border: 1px solid $light-gray;
+  background: #f2f2f2;
+  margin-bottom: 30px;
+}
+
+.comments_section .comment_info {
+  font-size: 11px;
+  color: $gray;
+  margin: 0 0 5px;
+  line-height: 1;
+}
