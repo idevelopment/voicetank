@@ -47,45 +47,45 @@
   color: #9b9b9b;
 }
 
-.comments_section .media-object {
+.comments-section .media-object {
   width: 48px;
   height: 48px;
 }
 
-.comments_section .media-heading {
+.comments-section .media-heading {
   margin-bottom: 2px;
   overflow: hidden;
 }
 
-.comments_section .media-heading h4 {
+.comments-section .media-heading h4 {
   font-size: 13px;
   display: inline-block;
   margin: 0;
 }
 
-.comments_section .media-heading .comment_act {
+.comments-section .media-heading .comment_act {
   float: right;
   margin: 0 4px 0 0;
 }
 
-.comments_section .media-heading .comment_act a {
+.comments-section .media-heading .comment_act a {
   opacity: .6;
 }
 
-.comments_section .media-heading .comment_act a:hover {
+.comments-section .media-heading .comment_act a:hover {
   opacity: 1;
 }
 
-.comments_section form {
-  padding: 10px;
+.comments-section form {
+  background: $white2;
   border: 1px solid $light-gray;
-  background: #f2f2f2;
   margin-bottom: 30px;
+  padding: 10px;
 }
 
-.comments_section .comment_info {
-  font-size: 11px;
+.comments-section .comment-info {
   color: $gray;
-  margin: 0 0 5px;
+  font-size: 11px;
   line-height: 1;
+  margin: 0 0 5px;
 }
