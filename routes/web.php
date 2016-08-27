@@ -24,8 +24,10 @@ Route::get('/users/departments/create', 'DepartmentsController@register')->name(
 Route::post('/users/departments/save', 'DepartmentsController@save')->name('departments.save');
 
 Route::get('/projects', 'ProjectsController@index')->name('projects.index');
-Route::get('/projects/create', 'ProjectsController@register')->name('departments.register');
-Route::post('/projects/save', 'ProjectsController@save')->name('departments.save');
+Route::get('/projects/details', 'ProjectsController@details')->name('projects.details');
+Route::get('/projects/create', 'ProjectsController@register')->name('projects.register');
+Route::post('/projects/save', 'ProjectsController@save')->name('projects.save');
+
 
 Route::get('/users/list', 'UsersController@index')->name('users.index');
 Route::get('/users/create', 'UsersController@register')->name('users.register');

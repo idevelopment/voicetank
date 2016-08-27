@@ -27,4 +27,14 @@ class ProjectsController extends Controller
   {
       return view('projects/list');
   }
+
+  /**
+   * Show the details from the project.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function details()
+  {
+      return view('projects/edit');
+  }
 }

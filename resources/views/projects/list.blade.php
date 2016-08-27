@@ -8,9 +8,6 @@
 </div>
 
 <div class="clearfix">&nbsp;</div>
-
-
-
         <div class="row">
               <div class="col-md-12">
                 <div class="x_panel">
@@ -18,11 +15,11 @@
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">Project Name</th>
+                          <th style="width: 30%">Project Name</th>
                           <th>Team Members</th>
                           <th>Project Progress</th>
                           <th>Status</th>
-                          <th style="width: 20%">#Edit</th>
+                          <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -59,8 +56,7 @@
                             <button type="button" class="btn btn-success btn-xs">Active</button>
                           </td>
                           <td>
-                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                            <a href="{{url('projects/details')}}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
                             <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                           </td>
                         </tr>
@@ -91,8 +87,7 @@
                             <button type="button" class="btn btn-success btn-xs">Active</button>
                           </td>
                           <td>
-                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                            <a href="{{url('projects/details')}}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
                             <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                           </td>
                         </tr>
