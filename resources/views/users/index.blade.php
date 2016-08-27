@@ -12,7 +12,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="x_panel">
-                  <table class="table table-striped projects">
+                  <table class="table table-striped bulk_action">
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
