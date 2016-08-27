@@ -23,6 +23,10 @@ Route::get('/users/departments', 'DepartmentsController@index')->name('departmen
 Route::get('/users/departments/create', 'DepartmentsController@register')->name('departments.register');
 Route::post('/users/departments/save', 'DepartmentsController@save')->name('departments.save');
 
+Route::get('/projects', 'ProjectsController@index')->name('projects.index');
+Route::get('/projects/create', 'ProjectsController@register')->name('departments.register');
+Route::post('/projects/save', 'ProjectsController@save')->name('departments.save');
+
 Route::get('/users/list', 'UsersController@index')->name('users.index');
 Route::get('/users/create', 'UsersController@register')->name('users.register');
 Route::post('/users/save', 'UsersController@save')->name('users.save');
