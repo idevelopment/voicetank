@@ -5,6 +5,11 @@
   <div class="title_left">
     <h3>Departments</h3>
   </div>
+
+  <div class="title_right">
+    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right">
+      <button class="btn btn-primary">Create a new department</button>
+    </div>
 </div>
 
 <div class="clearfix"></div>
