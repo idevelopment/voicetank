@@ -10,7 +10,7 @@
     <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
       <button class="btn btn-primary" data-toggle="modal" data-target="#create">Create a new department</button>
     </div>
-</div>
+  </div>
 
 <div class="clearfix"></div>
 
@@ -43,6 +43,8 @@
                                 </td>
                             </tr>
                         @endforeach
+
+                        {{ $departments->links() }}
                       </tbody>
                     </table>
 
