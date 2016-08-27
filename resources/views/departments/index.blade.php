@@ -24,7 +24,16 @@
                         </tr>
                       </thead>
                       <tbody>
-
+                        @foreach($departments as $department)
+                            <tr>
+                                <td><code>#D{{ $department->id }}</code></td>
+                                <td>{{ $department->name }}</td>
+                                <td>{{ $department->managers->name }}</td>
+                                <td>{{ count($department->teams->name) }} Teams</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        @endforeach
                       </tbody>
                     </table>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Departments;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,6 +26,7 @@ class DepartmentsController extends Controller
    */
   public function index()
   {
-      return view('departments/index');
+      $data['departments'] = Departments::paginate(15);
+      return view('departments/index', $data);
   }
 }
