@@ -16,4 +16,14 @@ class Teams extends Model
      * @var array
      */
     protected $fillable = ['name', 'description'];
+
+    /**
+     * Teams -> Departments controller.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function departments()
+    {
+        return $this->belongsToMany('App\Departments', 'departments_teams', 'departments_id', 'teams_id');
+    }
 }

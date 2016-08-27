@@ -31,7 +31,7 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        $data['teams'] = Teams::paginate(15);
+        $data['teams'] = Teams::with('departments')->paginate(15);
         return view('teams.index', $data);
     }
 
@@ -62,7 +62,7 @@ class TeamsController extends Controller
      */
     public function update(TeamsValidator $input, $id)
     {
-        session()->flash('class', '');
+        session()->flash('class', 'alert alert-success');
         session()->flash('message', '');
 
         return redirect()->back();
