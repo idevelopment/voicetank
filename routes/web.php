@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/users/departments', 'DepartmentsController@index')->name('departments.index');
 Route::post('/users/departments/save', 'DepartmentsController@save')->name('departments.save');
+Route::get('/users/departments/{id}', 'DepartmentsController@show')->name('departments.show');
 Route::get('/users/departments/destroy/{id}', 'DepartmentsController@destroy')->name('departments.destroy');
 
 

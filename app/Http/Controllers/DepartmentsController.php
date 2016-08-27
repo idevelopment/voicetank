@@ -51,7 +51,7 @@ class DepartmentsController extends Controller
     public function show($id)
     {
         $data['department'] = Departments::with('managers')->find($id);
-        return view('', $data);
+        return view('departments.show', $data);
     }
 
     /**
