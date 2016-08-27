@@ -36,9 +36,42 @@ class TeamsController extends Controller
     }
 
     /**
+     * Show a specific team.
+     *
+     * @url:platform  GET|HEAD:
+     * @see:phpunit
+     *
+     * @param  int $id the team id in the database.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($id)
+    {
+        // TODO: Register route
+        return view('teams.show');
+    }
+
+    /**
+     * Update a team in the database.
+     *
+     * @url:platform  POST:
+     * @see:phpunit
+     *
+     * @param  TeamsValidator $input
+     * @param  int $id the team id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(TeamsValidator $input, $id)
+    {
+        session()->flash('class', '');
+        session()->flash('message', '');
+
+        return redirect()->back();
+    }
+
+    /**
      * Save a new team in the application.
      *
-     * @url:platform
+     * @url:platform  POST:
      * @see:phpunit
      *
      * @param  TeamsValidator $input
@@ -46,6 +79,8 @@ class TeamsController extends Controller
      */
     public function save(TeamsValidator $input)
     {
+        // TODO: Register route.
+
         session()->flash('class', 'alert alert-success');
         session()->flash('message', 'The team has been added.');
 
