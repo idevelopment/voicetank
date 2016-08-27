@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Departments;
 use App\Http\Requests\DepartmentValidator;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,6 +34,8 @@ class DepartmentsController extends Controller
     public function index()
     {
         $data['departments'] = Departments::paginate(15);
+        $data['users']       = User::all();
+
         return view('departments/index', $data);
     }
 
@@ -62,8 +65,11 @@ class DepartmentsController extends Controller
      */
     public function save(DepartmentValidator $input)
     {
-        session()->flash('class', '');
-        session()->flash('message', '');
+        $department = Departments::create($input->except(['_token', 'managers']));
+        Departments::find($department->id)->managers->attach($input->manager);
+
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'The department has been added.');
 
         return redirect()->back();
     }

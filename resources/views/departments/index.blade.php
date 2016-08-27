@@ -55,22 +55,34 @@
                     <h4 class="modal-title" id="myModalLabel">Create a new department</h4>
                   </div>
                   <div class="modal-body">
-                    <form action="" method="post" class="">
+                    <form action="{{ route('departments.save') }}" method="post">
+                        {{ csrf_field() }}
                       <div class="form-group">
                         <label for="name">Department name <span class="text-danger">*</span></label>
                         <input type="text" name="name" id="name" class="form-control">
                       </div>
+
+                        <div class="form-group">
+                            <label for="manager"> Department Manager: <span class="text-danger">*</span></label>
+                            <select name="manager" class="form-control" id="manager">
+                                <option value="">-- Select the manager --</option>
+
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                       <div class="form-group">
                         <label for="description">Description <span class="text-danger">*</span></label>
                         <textarea name="description" id="description" class="form-control"></textarea>
                       </div>
 
-                    </form>
                   </div>
                   <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary btn-sm">Save changes</button>
+                      </form>
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-sm">Save changes</button>
                   </div>
                 </div>
               </div>

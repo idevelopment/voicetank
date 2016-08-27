@@ -13,7 +13,7 @@ class DepartmentValidator extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class DepartmentValidator extends FormRequest
     public function rules()
     {
         return [
-            //
+            'manager' => 'required',
+            'name' => 'required',
+            'description' => 'required'
         ];
     }
 }

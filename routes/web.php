@@ -20,7 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/users/departments', 'DepartmentsController@index')->name('departments.index');
-Route::get('/users/departments/create', 'DepartmentsController@register')->name('departments.register');
 Route::post('/users/departments/save', 'DepartmentsController@save')->name('departments.save');
 
 Route::get('/projects', 'ProjectsController@index')->name('projects.index');
