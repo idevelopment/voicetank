@@ -103,8 +103,11 @@ class DepartmentsController extends Controller
      */
     public function destroy($id)
     {
-        session()->flash('class', '');
-        session()->flash('message', '');
+        Departments::find($id)->managers()->sync([]);
+        Departments::destroy($id);
+
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'the Department has been deleted.');
 
         return redirect()->back();
     }

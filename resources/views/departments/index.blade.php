@@ -39,7 +39,7 @@
                                 <td>
                                     <a href="" class="label label-primary">Show</a>
                                     <a href="" class="label label-warning">Edit</a>
-                                    <a href="" class="label label-danger">Remove</a>
+                                    <a href="{{ route('departments.destroy', ['id' => $department->id]) }}" class="label label-danger">Remove</a>
                                 </td>
                             </tr>
                         @endforeach
