@@ -33,7 +33,7 @@ class DepartmentsController extends Controller
      */
     public function index()
     {
-        $data['departments'] = Departments::paginate(15);
+        $data['departments'] = Departments::with('managers')->paginate(15);
         $data['users']       = User::all();
 
         return view('departments/index', $data);
@@ -50,7 +50,7 @@ class DepartmentsController extends Controller
      */
     public function show($id)
     {
-        $data['department'] = Departments::find($id);
+        $data['department'] = Departments::with('managers')->find($id);
         return view('', $data);
     }
 
@@ -66,7 +66,7 @@ class DepartmentsController extends Controller
     public function save(DepartmentValidator $input)
     {
         $department = Departments::create($input->except(['_token', 'managers']));
-        Departments::find($department->id)->managers->attach($input->manager);
+        Departments::find($department->id)->managers()->attach($input->manager);
 
         session()->flash('class', 'alert alert-success');
         session()->flash('message', 'The department has been added.');
