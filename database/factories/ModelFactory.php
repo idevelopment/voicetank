@@ -23,6 +23,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 
-$factory->define(App\Countries::class, function(Faker\Generator $faker) {
+$factory->define(App\Countries::class, function (Faker\Generator $faker) {
     return ['country' => $faker->country];
+});
+
+$factory->define(App\Departments::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'description' => $faker->text(200)
+    ];
 });
