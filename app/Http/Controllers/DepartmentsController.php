@@ -3,30 +3,103 @@
 namespace App\Http\Controllers;
 
 use App\Departments;
+use App\Http\Requests\DepartmentValidator;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+/**
+ * Class DepartmentsController
+ * @package App\Http\Controllers
+ */
 class DepartmentsController extends Controller
 {
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
+    /**
+     * Create a new controller instance.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-  /**
-   * Show the application dashboard.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function index()
-  {
-      $data['departments'] = Departments::paginate(15);
-      return view('departments/index', $data);
-  }
+    /**
+     * Show the application dashboard.
+     *
+     * @url:platform  GET|HEAD:
+     * @see:phpunit
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $data['departments'] = Departments::paginate(15);
+        return view('departments/index', $data);
+    }
+
+    /**
+     * Show a specific department in the application.
+     *
+     * @url:platform  GET|HEAD:
+     * @see:phpunit
+     *
+     * @param   int $id The department id in the database.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $data['department'] = Departments::find($id);
+        return view('', $data);
+    }
+
+    /**
+     * Save a new department in the database.
+     *
+     * @url:platform  POST:
+     * @see:phpunit
+     *
+     * @param  DepartmentValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function save(DepartmentValidator $input)
+    {
+        session()->flash('class', '');
+        session()->flash('message', '');
+
+        return redirect()->back();
+    }
+
+    /**
+     * Update a department in the database.
+     *
+     * @url:platform  POST:
+     * @see:phpunit
+     *
+     * @param  DepartmentValidator $input
+     * @param  int $id The id of the department in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(DepartmentValidator $input, $id)
+    {
+        session()->flash('class', '');
+        session()->flash('message', '');
+
+        return redirect()->back();
+    }
+
+    /**
+     * Delete a department in the database
+     *
+     * @url:platform  GET|HEAD:
+     * @see:phpunit
+     *
+     * @param  int $id The id of the department in the database
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        session()->flash('class', '');
+        session()->flash('message', '');
+
+        return redirect()->back();
+    }
 }
