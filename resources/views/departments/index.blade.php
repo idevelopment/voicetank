@@ -37,7 +37,9 @@
                                 <td>{{-- count($department->teams->name) --}} Teams</td>
                                 <td></td>
                                 <td>
-
+                                    <a href="" class="label label-primary">Show</a>
+                                    <a href="" class="label label-warning">Edit</a>
+                                    <a href="" class="label label-danger">Remove</a>
                                 </td>
                             </tr>
                         @endforeach
