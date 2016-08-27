@@ -7,8 +7,8 @@
   </div>
 
   <div class="title_right">
-    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right">
-      <button class="btn btn-primary">Create a new department</button>
+    <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
+      <button class="btn btn-primary" data-toggle="modal" data-target="#create">Create a new department</button>
     </div>
 </div>
 
@@ -46,4 +46,33 @@
               </div>
             </div>
 
+            <!-- Create department -->
+            <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Create a new department</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form action="" method="post" class="">
+                      <div class="form-group">
+                        <label for="name">Department name <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="name" class="form-control">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="description">Description <span class="text-danger">*</span></label>
+                        <textarea name="description" id="description" class="form-control"></textarea>
+                      </div>
+
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 @endsection
