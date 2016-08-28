@@ -26,6 +26,9 @@ Route::get('/users/departments/destroy/{id}', 'DepartmentsController@destroy')->
 
 
 Route::get('/users/teams', 'TeamsController@index')->name('teams.index');
+Route::get('/users/teams/create', 'TeamsController@register')->name('teams.register');
+Route::post('/users/teams/save', 'TeamsController@index')->name('teams.save');
+
 
 Route::get('/projects', 'ProjectsController@index')->name('projects.index');
 Route::get('/projects/details', 'ProjectsController@details')->name('projects.details');
