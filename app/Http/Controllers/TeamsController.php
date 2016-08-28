@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TeamsValidator;
 use App\Teams;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -32,6 +33,8 @@ class TeamsController extends Controller
     public function index()
     {
         $data['teams'] = Teams::paginate(15);
+        $data['users'] = User::all();
+        
         return view('teams.index', $data);
     }
 
