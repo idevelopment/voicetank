@@ -26,7 +26,7 @@
                         <div role="tabpanel" class="tab-pane fade in" id="contact">
                             @include('profile.partials.contact')
                         </div>
-                        <div role="tabpanel" class="tab-panel fade in" id="security">
+                        <div role="tabpanel" class="tab-pane fade in" id="security">
                             @include('profile.partials.security')
                         </div>
                     </div>
