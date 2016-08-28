@@ -13,10 +13,6 @@ use App\Http\Requests;
 /**
  * Class AccountController
  * @package App\Http\Controllers
- *
- * TODO: Add flash message to the view.
- * TODO: Set validation to the views.
- * TODO: Set the name attributes in the form.
  */
 class AccountController extends Controller
 {
@@ -26,7 +22,7 @@ class AccountController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        // $this->middleware('lang');
+        $this->middleware('lang');
     }
 
     /**

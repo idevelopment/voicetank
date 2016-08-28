@@ -11,6 +11,7 @@
     <title>VoiceTank</title>
 
     <!-- Styles -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/frontend.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -47,6 +48,17 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="fa fa-language"></span>
+                        </a>
+
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="?lang=nl">Dutch</a></li>
+                            <li><a href="?lang=en">English</a></li>
+                        </ul>
+                    </li>
+
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>

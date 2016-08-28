@@ -119,6 +119,17 @@
                 </ul>
               </li>
 
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  <span class="fa fa-language"></span>
+                </a>
+
+                <ul role="menu" class="dropdown-menu">
+                  <li><a href="?lang=nl">Dutch</a></li>
+                  <li><a href="?lang=en">English</a></li>
+                </ul>
+              </li>
+
               <li role="presentation" class="dropdown">
                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                   <i class="fa fa-envelope-o"></i>
