@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileInfoValidator;
+use App\Http\Requests\ProfilePasswordValidator;
+use App\User;
+use App\Http\Requests\ProfileContactValidator;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 /**
@@ -33,18 +36,48 @@ class AccountController extends Controller
         return view('profile.index');
     }
 
-    public function updateContact()
+    /**
+     * Update the account contact information.
+     *
+     * @url:platform  POST:
+     * @see:phpunit
+     * @see:phpunit
+     *
+     * @param  ProfileContactValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateContact(ProfileContactValidator $input)
     {
-
+        return redirect()->back();
     }
 
-    public function updateInfo()
+    /**
+     * Update the account information.
+     *
+     * @url:platform  POST:
+     * @see:phpunit
+     * @see:phpunit
+     *
+     * @param  ProfileInfoValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateInfo(ProfileInfoValidator $input)
     {
-
+        return redirect()->back();
     }
 
-    public function updatePassword()
+    /**
+     * Update the profile password.
+     *
+     * @url:platform  POST:
+     * @see:phpunit
+     * @see:phpunit
+     *
+     * @param  ProfilePasswordValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updatePassword(ProfilePasswordValidator $input)
     {
-
+        return redirect()->back();
     }
 }
