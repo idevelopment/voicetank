@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Countries;
 use App\Http\Requests\ProfileInfoValidator;
 use App\Http\Requests\ProfilePasswordValidator;
 use App\User;
@@ -21,27 +22,29 @@ class AccountController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        // $this->middleware('lang');
     }
 
     /**
      * Update page for the user profile.
      *
      * @url:platform  GET|HEAD:
-     * @see:phpunit
+     * @see:phpunit   ProfileTest::testProfileSettingsView()
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        return view('profile.index');
+        $data['countries'] = Countries::all();
+        return view('profile.index', $data);
     }
 
     /**
      * Update the account contact information.
      *
      * @url:platform  POST:
-     * @see:phpunit
-     * @see:phpunit
+     * @see:phpunit   ProfileTest::testUpdateContactInfoWithErrors()
+     * @see:phpunit   Profiletest::testUpdateContactInfoWithoutErrors()
      *
      * @param  ProfileContactValidator $input
      * @return \Illuminate\Http\RedirectResponse
@@ -55,8 +58,8 @@ class AccountController extends Controller
      * Update the account information.
      *
      * @url:platform  POST:
-     * @see:phpunit
-     * @see:phpunit
+     * @see:phpunit   Profiletest::testUpdateInfoWithErrors()
+     * @see:phpunit   Profiletest::testUpdateInfoWithoutErrors()
      *
      * @param  ProfileInfoValidator $input
      * @return \Illuminate\Http\RedirectResponse
@@ -70,8 +73,8 @@ class AccountController extends Controller
      * Update the profile password.
      *
      * @url:platform  POST:
-     * @see:phpunit
-     * @see:phpunit
+     * @see:phpunit   ProfileTest::testUpdatePasswordWithoutErrors()
+     * @see:phpunit   ProfileTest::testUpdatePasswordWithErrors()
      *
      * @param  ProfilePasswordValidator $input
      * @return \Illuminate\Http\RedirectResponse

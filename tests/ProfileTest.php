@@ -9,41 +9,76 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
  *
  * // TODO: write the tests
  * // TODO: write the docblocks
+ * // TODO: document traits.
  */
 class ProfileTest extends TestCase
 {
-   public function testProfileSettingsView()
-   {
-       //
-   }
+    use DatabaseMigrations, DatabaseTransactions;
 
-   public function testUpdateInfoWithErrors()
-   {
-       //
-   }
+    /**
+     * GET|HEAD: /profile
+     * ROUTE:    profile
+     *
+     * @group all
+     * @group profile
+     */
+    public function testProfileSettingsView()
+    {
 
-   public function testUpdateInfoWithoutErrors()
-   {
-       //
-   }
+    }
 
-   public function testUpdatePasswordWithErrors()
-   {
-       //
-   }
+    /**
+     * @group all
+     * @group profile
+     */
+    public function testUpdateInfoWithErrors()
+    {
+        //
+    }
 
-   public function testUpdatePasswordWithoutErrors()
-   {
-       //
-   }
+    /**
+     * @group all
+     * @group profile
+     */
+    public function testUpdateInfoWithoutErrors()
+    {
+        //
+    }
 
-   public function testUpdateContactInfoWithErrors()
-   {
-       //
-   }
+    /**
+     * @group all
+     * @group profile
+     */
+    public function testUpdatePasswordWithErrors()
+    {
+        //
+    }
 
-   public function testUpdateContactInfoWithoutErrors()
-   {
-       //
-   }
+    /**
+     * @group all
+     * @group profile
+     */
+    public function testUpdatePasswordWithoutErrors()
+    {
+        //
+    }
+
+
+    /**
+     * @group all
+     * @group profile
+     */
+    public function testUpdateContactInfoWithErrors()
+    {
+        //
+    }
+
+    /**
+     * @group all
+     * @group profile
+     */
+    public function testUpdateContactInfoWithoutErrors()
+    {
+        //
+    }
 }
