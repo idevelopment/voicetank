@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+/**
+ * Class SettingsController
+ * @package App\Http\Controllers
+ */
 class SettingsController extends Controller
 {
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
+    /**
+     * Create a new controller instance.
+     */
   public function __construct()
   {
       $this->middleware('auth');

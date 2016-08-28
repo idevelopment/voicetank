@@ -99,7 +99,7 @@
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                   <li><a href="javascript:;"> Profile</a></li>
                   <li>
-                    <a href="javascript:;">
+                    <a href="{{ route('profile') }}">
                       <span class="badge bg-red pull-right">50%</span>
                       <span>Settings</span>
                     </a>

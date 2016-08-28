@@ -15,9 +15,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
-        'email' => $faker->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'name'           => $faker->name,
+        'fname'          => $faker->firstName,
+        'city'           => $faker->city,
+        'country'        => $faker->country,
+        'home_phone'     => $faker->phoneNumber,
+        'office_phone'   => $faker->phoneNumber,
+        'mobile'         => $faker->phoneNumber,
+        'zipcode'        => $faker->postcode,
+        'address'        => $faker->address,
+        'email'          => $faker->safeEmail,
+        'password'       => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
 });
