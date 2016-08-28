@@ -21,6 +21,8 @@ class CreateDepartmentsTable extends Migration
         });
 
         Schema::create('departments_user', function (Blueprint $table) {
+            $table->increments('id');
+
             $table->integer('departments_id')->unsigned()->index();
             $table->foreign('departments_id')->references('id')->on('departments')->onDelete('cascade');
 
