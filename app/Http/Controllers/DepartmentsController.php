@@ -26,8 +26,8 @@ class DepartmentsController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @url:platform  GET|HEAD:
-     * @see:phpunit
+     * @url:platform  GET|HEAD: /users/departments
+     * @see:phpunit   DepartmentsTest::testOverviewDepartments()
      *
      * @return \Illuminate\Http\Response
      */
@@ -42,8 +42,8 @@ class DepartmentsController extends Controller
     /**
      * Show a specific department in the application.
      *
-     * @url:platform  GET|HEAD:
-     * @see:phpunit
+     * @url:platform  GET|HEAD: /users/departments/{id}
+     * @see:phpunit   DepartmentsTest::testShowSpecificDepartment()
      *
      * @param   int $id The department id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -57,8 +57,9 @@ class DepartmentsController extends Controller
     /**
      * Save a new department in the database.
      *
-     * @url:platform  POST:
-     * @see:phpunit
+     * @url:platform  POST: /users/departments/save
+     * @see:phpunit   Departmentstest::testInsertDepartmentsWithoutErrors()
+     * @see:phpunit   DepartmentsTest::testInsertDepartmentsWithErrors()
      *
      * @param  DepartmentValidator $input
      * @return \Illuminate\Http\RedirectResponse
@@ -95,8 +96,8 @@ class DepartmentsController extends Controller
     /**
      * Delete a department in the database
      *
-     * @url:platform  GET|HEAD:
-     * @see:phpunit
+     * @url:platform  GET|HEAD: /users/departments/destroy/{id}
+     * @see:phpunit   DepartmentsTest::testDestroyingDepartment()
      *
      * @param  int $id The id of the department in the database
      * @return \Illuminate\Http\RedirectResponse
@@ -107,7 +108,7 @@ class DepartmentsController extends Controller
         Departments::destroy($id);
 
         session()->flash('class', 'alert alert-success');
-        session()->flash('message', 'the Department has been deleted.');
+        session()->flash('message', 'The department has been deleted.');
 
         return redirect()->back();
     }

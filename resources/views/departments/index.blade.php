@@ -16,6 +16,12 @@
 
             <div class="row">
               <div class="col-md-12">
+                  @if(Session::has('class') && Session::has('message'))
+                      <div class="{{ Session::get('class') }}">
+                          {{ Session::get('message') }}
+                      </div>
+                  @endif
+
                 <div class="x_panel">
                   <table class="table table-striped bulk_action">
                       <thead>
