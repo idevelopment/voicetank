@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="{{ route('profile.security')  }}" method="POST">
     {{-- CSRF token --}}
     {{ csrf_field() }}
 

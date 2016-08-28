@@ -8,7 +8,6 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
  * Class ProfileTest
  *
  * // TODO: write the tests
- * // TODO: write the docblocks
  */
 class ProfileTest extends TestCase
 {
@@ -92,6 +91,10 @@ class ProfileTest extends TestCase
     {
         $this->withoutMiddleware();
         $this->authencation();
+        $this->post(route('profile.security'), []);
+        $this->assertHasOldInput();
+        $this->assertSessionHasErrors();
+        $this->seeStatusCode(302);
     }
 
     /**
@@ -103,8 +106,17 @@ class ProfileTest extends TestCase
      */
     public function testUpdatePasswordWithoutErrors()
     {
+        $input['password']              = 'password';
+        $input['password_confirmation'] = 'password';
+
         $this->withoutMiddleware();
         $this->authencation();
+        $this->post(route('profile.security'), $input);
+        $this->seeStatusCode(302);
+        $this->session([
+            'class'   => 'alert alert-success',
+            'message' => 'Profile password has been updated',
+        ]);
     }
 
 
