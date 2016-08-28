@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TeamsValidator;
+
+use App\Departments;
 use App\Teams;
 use App\User;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -36,6 +39,22 @@ class TeamsController extends Controller
         $data['users'] = User::all();
 
         return view('teams.index', $data);
+    }
+
+    /**
+     * Show the registration form.
+     *
+     * @url:platform  GET|HEAD:
+     * @see:phpunit
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function register()
+    {
+        $data['departmens'] = Departments::all();
+        $data['users'] = User::all();
+
+        return view('teams.create', $data);
     }
 
     /**
