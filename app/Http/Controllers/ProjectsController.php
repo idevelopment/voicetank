@@ -29,6 +29,16 @@ class ProjectsController extends Controller
   }
 
   /**
+   * Show the form to create a newx project.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function register()
+  {
+      return view('projects/register');
+  }
+
+  /**
    * Show the details from the project.
    *
    * @return \Illuminate\Http\Response

@@ -225,6 +225,9 @@
 <script src="/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
 <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
 <script src="/vendors/flot.curvedlines/curvedLines.js"></script>
+
+<script src="/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+
 <!-- DateJS -->
 <script src="/vendors/DateJS/build/date.js"></script>
 <!-- bootstrap-daterangepicker -->
@@ -236,6 +239,12 @@
 <!-- Flot -->
 <script>
 $(document).ready(function() {
+  $('#wizard').smartWizard();
+
+  $('.buttonNext').addClass('btn btn-success');
+  $('.buttonPrevious').addClass('btn btn-primary');
+  $('.buttonFinish').addClass('btn btn-default');
+
   //define chart clolors ( you maybe add more colors if you want or flot will add it automatic )
   var chartColours = ['#3498DB', '#3F97EB', '#72c380', '#6f7a8a', '#f7cb38', '#5a8022', '#2c7282'];
 
