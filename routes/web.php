@@ -28,7 +28,9 @@ Route::get('/projects/details', 'ProjectsController@details')->name('projects.de
 Route::get('/projects/create', 'ProjectsController@register')->name('projects.register');
 Route::post('/projects/save', 'ProjectsController@save')->name('projects.save');
 
-Route::get('/profile', 'AccountCOntroller@index')->name('profile');
+Route::get('/profile', 'AccountController@index')->name('profile');
+Route::post('/profile/update/info', 'AccountController@updateInfo')->name('profile.info');
+Route::post('/profile/update/security', 'AccountController@updatePassword')->name('profile.security');
 
 Route::get('/users/list', 'UsersController@index')->name('users.index');
 Route::get('/users/create', 'UsersController@register')->name('users.register');

@@ -13,6 +13,10 @@ use App\Http\Requests;
 /**
  * Class AccountController
  * @package App\Http\Controllers
+ *
+ * TODO: Add flash message to the view.
+ * TODO: Set validation to the views.
+ * TODO: Set the name attributes in the form.
  */
 class AccountController extends Controller
 {
@@ -28,7 +32,7 @@ class AccountController extends Controller
     /**
      * Update page for the user profile.
      *
-     * @url:platform  GET|HEAD:
+     * @url:platform  GET|HEAD: /profile
      * @see:phpunit   ProfileTest::testProfileSettingsView()
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -42,7 +46,7 @@ class AccountController extends Controller
     /**
      * Update the account contact information.
      *
-     * @url:platform  POST:
+     * @url:platform  POST: /profile/update/contact
      * @see:phpunit   ProfileTest::testUpdateContactInfoWithErrors()
      * @see:phpunit   Profiletest::testUpdateContactInfoWithoutErrors()
      *
@@ -51,13 +55,16 @@ class AccountController extends Controller
      */
     public function updateContact(ProfileContactValidator $input)
     {
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'The profile contact information has been updated');
+
         return redirect()->back();
     }
 
     /**
      * Update the account information.
      *
-     * @url:platform  POST:
+     * @url:platform  POST: /profile/update/info
      * @see:phpunit   Profiletest::testUpdateInfoWithErrors()
      * @see:phpunit   Profiletest::testUpdateInfoWithoutErrors()
      *
@@ -66,13 +73,19 @@ class AccountController extends Controller
      */
     public function updateInfo(ProfileInfoValidator $input)
     {
+        $user = auth()->user()->id;
+        User::find($user->id)->update($input->except('_token'));
+
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'The profile information has been updated');
+
         return redirect()->back();
     }
 
     /**
      * Update the profile password.
      *
-     * @url:platform  POST:
+     * @url:platform  POST: /profile/update/security
      * @see:phpunit   ProfileTest::testUpdatePasswordWithoutErrors()
      * @see:phpunit   ProfileTest::testUpdatePasswordWithErrors()
      *
@@ -81,6 +94,14 @@ class AccountController extends Controller
      */
     public function updatePassword(ProfilePasswordValidator $input)
     {
+        $user   = auth()->user();
+        $filter = $input->except(['_token', 'password_confirmation']);
+
+        User::find($user->id)->update($filter);
+
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'Profile password has been updated');
+
         return redirect()->back();
     }
 }

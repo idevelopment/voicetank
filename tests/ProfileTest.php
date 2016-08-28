@@ -56,8 +56,8 @@ class ProfileTest extends TestCase
     }
 
     /**
-     * POST:
-     * ROUTE:
+     * POST:     /profile/update/info
+     * ROUTE:    profile.info
      *
      * @group all
      * @group profile
@@ -69,8 +69,8 @@ class ProfileTest extends TestCase
     }
 
     /**
-     * POST:
-     * ROUTE:
+     * POST:     /profile/update/info
+     * ROUTE:    profile.info
      *
      * @group all
      * @group profile
@@ -82,8 +82,8 @@ class ProfileTest extends TestCase
     }
 
     /**
-     * POST:
-     * ROUTE:
+     * POST:     /profile/update/security
+     * ROUTE:    profile.security
      *
      * @group all
      * @group profile
@@ -95,8 +95,8 @@ class ProfileTest extends TestCase
     }
 
     /**
-     * POST:
-     * ROUTE:
+     * POST:     /profile/update/security
+     * ROUTE:    profile.security
      *
      * @group all
      * @group profile
@@ -109,8 +109,8 @@ class ProfileTest extends TestCase
 
 
     /**
-     * POST:
-     * ROUTE:
+     * POST:     /profile/update/contact
+     * ROUTE:    profile.contact
      *
      * @group all
      * @group profile
@@ -122,8 +122,8 @@ class ProfileTest extends TestCase
     }
 
     /**
-     * POST:
-     * ROUTE:
+     * POST:     /profile/update/contact
+     * ROUTE:    profile.contact
      *
      * @group all
      * @group profile
