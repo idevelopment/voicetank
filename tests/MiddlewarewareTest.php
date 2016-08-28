@@ -18,7 +18,7 @@ class MiddlewarewareTest extends TestCase
     public function testLanguageMiddleware()
     {
         // Test dutch language
-        $this->visit('lang=nl');
+        $this->visit('?lang=nl');
         $this->seeStatusCode(200);
 
         // test english language
