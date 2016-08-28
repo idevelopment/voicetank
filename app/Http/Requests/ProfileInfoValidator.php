@@ -13,7 +13,7 @@ class ProfileInfoValidator extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class ProfileInfoValidator extends FormRequest
     public function rules()
     {
         return [
-            //
+            'fname'   => 'required',
+            'name'    => 'required',
+            'address' => 'required',
+            'zipcode' => 'required',
+            'city'    => 'required',
+            'country' => 'required'
         ];
     }
 }

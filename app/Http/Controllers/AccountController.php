@@ -55,6 +55,9 @@ class AccountController extends Controller
      */
     public function updateContact(ProfileContactValidator $input)
     {
+        $user = auth()->user();
+        User::find($user->id)->update($input->except('_token'));
+
         session()->flash('class', 'alert alert-success');
         session()->flash('message', 'The profile contact information has been updated');
 
@@ -73,7 +76,7 @@ class AccountController extends Controller
      */
     public function updateInfo(ProfileInfoValidator $input)
     {
-        $user = auth()->user()->id;
+        $user = auth()->user();
         User::find($user->id)->update($input->except('_token'));
 
         session()->flash('class', 'alert alert-success');

@@ -65,6 +65,11 @@ class ProfileTest extends TestCase
     {
         $this->withoutMiddleware();
         $this->authencation();
+
+        $this->post(route('profile.info'), []);
+        $this->assertHasOldInput();
+        $this->assertSessionHasErrors();
+        $this->seeStatusCode(302);
     }
 
     /**
@@ -76,8 +81,23 @@ class ProfileTest extends TestCase
      */
     public function testUpdateInfoWithoutErrors()
     {
+        $input['name']    = 'Lastname';
+        $input['fname']   = 'Firstname';
+        $input['address'] = 'My address';
+        $input['zipcode'] = '3300';
+        $input['city']    = 'City name';
+        $input['country'] = 'Belguim';
+
         $this->withoutMiddleware();
         $this->authencation();
+        $this->post(route('profile.info'), $input);
+        $this->seeInDatabase('users', $input);
+        $this->seeStatusCode(302);
+        $this->session([
+            'class'   => 'alert alert-success',
+            'message' => 'The profile information has been updated',
+        ]);
+
     }
 
     /**
@@ -131,6 +151,10 @@ class ProfileTest extends TestCase
     {
         $this->withoutMiddleware();
         $this->authencation();
+        $this->post(route('profile.contact'), []);
+        $this->assertHasOldInput();
+        $this->assertSessionHasErrors();
+        $this->seeStatusCode(302);
     }
 
     /**
@@ -142,7 +166,23 @@ class ProfileTest extends TestCase
      */
     public function testUpdateContactInfoWithoutErrors()
     {
+        $input['home_phone']   = '0000/00.00.00';
+        $input['office_phone'] = '0000/00.00.00';
+        $input['mobile']       = '0000/00.00.00';
+
+        $db['id']           = $this->user->id;
+        $db['home_phone']   = $input['home_phone'];
+        $db['office_phone'] = $input['office_phone'];
+        $db['mobile']       = $input['mobile'];
+
         $this->withoutMiddleware();
         $this->authencation();
+        $this->post(route('profile.contact'), $input);
+        $this->seeInDatabase('users', $db);
+        $this->seeStatusCode(302);
+        $this->session([
+            'class' => 'alert alert-success',
+            'message' => 'The profile contact information has been updated'
+        ]);
     }
 }

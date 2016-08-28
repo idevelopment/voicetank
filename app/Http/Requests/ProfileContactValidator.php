@@ -13,7 +13,7 @@ class ProfileContactValidator extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class ProfileContactValidator extends FormRequest
     public function rules()
     {
         return [
-            //
+            'home_phone'   => 'required',
+            'office_phone' => 'required',
+            'mobile'       => 'required'
         ];
     }
 }
