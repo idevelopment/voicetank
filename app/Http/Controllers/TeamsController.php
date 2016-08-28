@@ -28,8 +28,8 @@ class TeamsController extends Controller
     /**
      * Get a team overview in the application.
      *
-     * @url:platform  GET|HEAD:
-     * @see:phpunit
+     * @url:platform  GET|HEAD: /users/teams
+     * @see:phpunit   Teamstest::testTeamOverview()
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -44,8 +44,8 @@ class TeamsController extends Controller
     /**
      * Show the registration form.
      *
-     * @url:platform  GET|HEAD:
-     * @see:phpunit
+     * @url:platform  GET|HEAD: /users/teams/register
+     * @see:phpunit   TeamsTest::testCreateWizardView()
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -95,13 +95,18 @@ class TeamsController extends Controller
      *
      * @url:platform  POST:
      * @see:phpunit
+     * @see:phpunit
      *
      * @param  TeamsValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
     public function save(TeamsValidator $input)
     {
-        // TODO: Register route.
+        $team = Teams::create(['leader', '_token', 'users']);
+
+        $new  = Teams::find($team->id);
+        $new->leader()->attach($input->leader);
+        $new->members()->sync($input->users);
 
         session()->flash('class', 'alert alert-success');
         session()->flash('message', 'The team has been added.');

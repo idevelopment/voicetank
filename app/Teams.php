@@ -28,11 +28,11 @@ class Teams extends Model
     }
 
     /**
-     * Teams -> manager Relation.
+     * Teams -> leader Relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function manager()
+    public function leader()
     {
         return $this->belongsToMany('App\User', 'teams_manager', 'teams_id', 'user_id');
     }

@@ -29,7 +29,7 @@
                       </ul>
                       <div id="step-1">
                         <form class="form-horizontal form-label-left">
-
+                            {{ csrf_field() }}
                           <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Team name <span class="text-danger">*</span>
                             </label>
@@ -41,7 +41,13 @@
                           <div class="form-group">
                             <label for="leader" class="control-label col-md-3 col-sm-3 col-xs-12">Team Leader <span class="text-danger">*</span></label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input id="leader" class="form-control col-md-7 col-xs-12" type="text" name="leader">
+                              <select name="leader" id="leader" class="form-control">
+                                  <option value="">—- select the team leader. --</option>
+
+                                  @foreach($users as $leader)
+                                      <option value="{{ $leader->id }}">{{ $leader->name }}</option>
+                                  @endforeach
+                              </select>
                             </div>
                           </div>
 
@@ -63,8 +69,11 @@
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="users">Users <span class="text-danger">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                            <select name="users[]" id="users" required="required" class="form-control col-md-7 col-xs-12" multiple="">
-                              
+                            <select name="users[]" id="users" class="form-control col-md-7 col-xs-12" multiple="">
+                                <option value="">-- Select the team users. --</option>
+                                @foreach($users as $member)
+                                    <option value="{{ $member->id }}">{{ $member->name }}</option>
+                                @endforeach
                             </select>
                             </div>
                           </div>

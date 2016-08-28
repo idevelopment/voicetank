@@ -13,7 +13,7 @@ class TeamsValidator extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class TeamsValidator extends FormRequest
     public function rules()
     {
         return [
-            //
+            'leader'      => 'required',
+            'name'        => 'required',
+            'users'       => 'required',
+            'description' => 'required'
         ];
     }
 }
