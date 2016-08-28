@@ -47,8 +47,12 @@ class ProfileTest extends TestCase
      */
     public function testProfileSettingsView()
     {
+        $route = route('profile');
+
         $this->withoutMiddleware();
         $this->authencation();
+        $this->visit('profile');
+        $this->seeStatusCode(200);
     }
 
     /**
