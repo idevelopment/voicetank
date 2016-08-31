@@ -17,6 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Github - Social authencation.
+Route::get('auth/github', 'Auth\GithubController@redirectToProvider');
+Route::get('auth/github/callback', 'Auth\GithubController@handleProviderCallback');
+
+// Facebook - Social Authencation.
+Route::get('auth/facebook', 'Auth\FacebookController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\FacebookController@handleProviderCallback');
+
 Route::get('/home', 'HomeController@index');
 
 Route::get('/users/departments', 'DepartmentsController@index')->name('departments.index');
@@ -34,6 +42,16 @@ Route::get('/projects', 'ProjectsController@index')->name('projects.index');
 Route::get('/projects/details', 'ProjectsController@details')->name('projects.details');
 Route::get('/projects/create', 'ProjectsController@register')->name('projects.register');
 Route::post('/projects/save', 'ProjectsController@save')->name('projects.save');
+
+Route::get('/profile', 'AccountController@index')->name('profile');
+Route::post('/profile/update/info', 'AccountController@updateInfo')->name('profile.info');
+Route::post('/profile/update/security', 'AccountController@updatePassword')->name('profile.security');
+Route::post('/profile/update/contact', 'AccountController@updateContact')->name('profile.contact');
+
+Route::get('/feedback/labels', 'LabelController@index')->name('labels.index');
+Route::get('/feedback/labels/destroy/{id}', 'LabelController@destroy')->name('labels.destroy');
+Route::post('/feedback/labels/update/{id}', 'LabelController@update')->name('labels.update');
+Route::post('/feedback/labels', 'LabelController@store')->name('labels.store');
 
 
 Route::get('/users/list', 'UsersController@index')->name('users.index');

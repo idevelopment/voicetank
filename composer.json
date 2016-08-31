@@ -8,14 +8,17 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
         "barryvdh/laravel-debugbar": "^2.2",
-        "silber/bouncer": "dev-master"
+        "silber/bouncer": "dev-master",
+        "filp/whoops": "^2.1",
+        "laravel/socialite": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.0",
         "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "symfony/dom-crawler": "3.1.*",
+        "laravel/homestead": "^3.0"
     },
     "autoload": {
         "classmap": [
@@ -38,6 +41,7 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
+            "php -r \"copy('.env.example', '.env');\"",
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize"
         ],
