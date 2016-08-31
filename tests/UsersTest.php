@@ -33,6 +33,22 @@ class UsersTest extends TestCase
     }
 
     /**
+     * GET|HEAD:  /users/{id}
+     * ROUTE:     users.show
+     *
+     * @group all
+     * @group acl
+     */
+    public function testUsersSpecific()
+    {
+        $route = route('users.show', ['id' => $this->user->id]);
+
+        $this->authencation();
+        $this->visit($route);
+        $this->seeStatusCode(200);
+    }
+
+    /**
      * GET|HEAD:  /users/list
      * ROUTE:     users.index
      *
