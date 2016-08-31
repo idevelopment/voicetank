@@ -6,7 +6,62 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+/**
+ * Class LabelController
+ * @package App\Http\Controllers
+ */
 class LabelController extends Controller
 {
-    //
+    /**
+     * LabelController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('lang');
+    }
+
+    /**
+     * Get all the labels in the backend.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index()
+    {
+        $data['labels'] = '';
+        return view('');
+    }
+
+    /**
+     * Store a new label in the database.
+     */
+    public function store()
+    {
+
+    }
+
+    public function show($id)
+    {
+
+    }
+
+    /**
+     * Update a label in the database.
+     *
+     * @param int $id the id for the label in the database.
+     */
+    public function update($id)
+    {
+
+    }
+
+    /**
+     * Destroy a label out off the database.
+     *
+     * @param int $id the id for the label in the database.
+     */
+    public function destroy($id)
+    {
+
+    }
 }
