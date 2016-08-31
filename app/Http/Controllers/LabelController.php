@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Labels;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -26,21 +27,22 @@ class LabelController extends Controller
      * Get all the labels in the backend.
      *
      * @url:platform  GET\HEAD: /feedback/labels
-     * @see:phpunit
+     * @see:phpunit   LabelsTest::testLabelOverview()
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        $data['labels'] = '';
-        return view('labels.index', $data);
+        $data['labels'] = Label::paginate(15);
+        return view('index', $data);
     }
 
     /**
      * Store a new label in the database.
      *
      * @url:platform  POST: /feedback/labels
-     * @see:phpunit
+     * @see:phpunit   LabelsTest::testLabelCreateWithoutErrors()
+     * @see:phpunit   LabelsTest::testLabelCreateWithErrors()
      *
      * @param  Requests\LabelValidator $input
      * @return \Illuminate\Http\RedirectResponse
@@ -57,21 +59,23 @@ class LabelController extends Controller
      * Display a specific label in the application.
      *
      * @url:platform  GET\HEAD: /feedback/labels/{id}
-     * @see:phpunit
+     * @see:phpunit   LabelsTest::testLabelShowMethod()
      *
      * @param  int $id the label id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
-        return view('');
+        $data['label'] = Labels::find($id);
+        return view('', $data);
     }
 
     /**
      * Update a label in the database.
      *
      * @url:platform  POST: /feedback/labels/update/{id}
-     * @see:phpunit
+     * @see:phpunit   LabelsTest::testLabelUpdateWithoutErrors()
+     * @see:phpunit   LabelsTest::testLabelUpdateWithErrors()
      *
      * @param  Requests\LabelValidator $input
      * @param  int $id the id for the label in the database.
@@ -89,7 +93,7 @@ class LabelController extends Controller
      * Destroy a label out off the database.
      *
      * @url:platform  GET\HEAD:  /feedback/labels/destroy/{id}
-     * @see:phpunit
+     * @see:phpunit   LabelsTest::testLabelDelete()
      *
      * @param  int $id the id for the label in the database.
      * @return \Illuminate\Http\RedirectResponse
