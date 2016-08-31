@@ -55,6 +55,6 @@ Route::post('/feedback/labels', 'LabelController@store')->name('labels.store');
 
 Route::get('/users/list', 'UsersController@index')->name('users.index');
 Route::get('/users/{id}', 'UsersController@show')->name('users.show');
-Route::get('/users/create', 'UsersController@register')->name('users.register');
+Route::get('', 'UsersController@register')->name('users.register');
 Route::get('/users/destroy/{id}', 'UsersController@destroy')->name('users.destroy');
 Route::post('/users/save', 'UsersController@save')->name('users.save');

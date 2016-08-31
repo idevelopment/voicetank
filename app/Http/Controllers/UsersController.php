@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Countries;
 use App\Http\Requests\UsersValidator;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -40,7 +41,7 @@ class UsersController extends Controller
      * Get the specific information for a user;
      *
      * @url:platform  GET|HEAD
-     * @see:phpunit
+     * @see:phpunit   UsersTest::testUsersSpecific()
      *
      * @param  int $id the user id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -54,18 +55,20 @@ class UsersController extends Controller
     /**
      * Display the employee register view.
      *
-     * @url:platform  GET|HEAD:
-     * @see:phpunit   UsersTest::
+     * @url:platform  GET|HEAD: /users/create
+     * @see:phpunit   UsersTest::testUserRegisterView
      */
     public function register()
     {
-        return view('users.register');
+        $data['countries'] = Countries::all();
+        return view('users.register', $data);
     }
 
     /**
      * Save the new employee into the database.
      *
      * @url:platform  POST: /users/save
+     * @see:phpunit   UsersTest::
      * @see:phpunit   UsersTest::
      *
      * @param  UsersValidator $input
