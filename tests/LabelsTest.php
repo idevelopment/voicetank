@@ -19,6 +19,9 @@ class LabelsTest extends TestCase
     /** @var array $labels Database labels. */
     protected $labels;
 
+    /** @var array paramId the id parameter for the route */
+    protected $paramId;
+
     /**
      * Set up all the needed factories.
      */
@@ -29,6 +32,9 @@ class LabelsTest extends TestCase
         // Database transactions factories.
         $this->user   = factory(App\User::class)->create();
         $this->labels = factory(App\Labels::class)->create();
+
+        // Route parameters.
+        $this->paramId = $this->labels->id;
     }
     /**
      * Authencation class -> Used for test authencated routes.
@@ -72,7 +78,15 @@ class LabelsTest extends TestCase
      */
     public function testLabelDelete()
     {
-       //
+        $session['class']   = 'alert alert-success';
+        $session['message'] = 'The label has been deleted';
+
+        $this->authencation();
+        $this->seeInDatabase('labels', ['id' => $this->paramId]);
+        $this->visit(route('labels.destroy', $this->paramId));
+        $this->dontSeeInDatabase('labels', ['id' => $this->paramId]);
+        $this->seeStatusCode(200);
+        $this->session($session);
     }
 
 
@@ -87,7 +101,23 @@ class LabelsTest extends TestCase
      */
     public function testLabelUpdateWithoutErrors()
     {
-        //
+        $db['name']  = $this->labels->name;
+        $db['color'] = $this->labels->color;
+
+        $input['name']  = 'testing label';
+        $input['color'] = 'testing color';
+
+        $session['class']   = 'alert alert-success';
+        $session['message'] = 'The label has been updated.';
+
+        $this->withoutMiddleware();
+        $this->authencation();
+        $this->seeInDatabase('labels', $db);
+        $this->post(route('labels.update', $this->paramId), $input);
+        $this->dontSeeInDatabase('labels', $db);
+        $this->seeInDatabase('labels', $input);
+        $this->seeStatusCode(302);
+        $this->session($session);
     }
 
     /**
@@ -101,7 +131,11 @@ class LabelsTest extends TestCase
      */
     public function testLabelUpdateWithErrors()
     {
-        //
+        $this->authencation();
+        $this->post(route('labels.update', $this->paramId), []);
+        $this->assertHasOldInput();
+        $this->assertSessionHasErrors();
+        $this->seeStatusCode(302);
     }
 
     /**
