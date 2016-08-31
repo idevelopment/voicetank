@@ -152,9 +152,9 @@ class ProfileTest extends TestCase
         $this->withoutMiddleware();
         $this->authencation();
         $this->post(route('profile.contact'), []);
+        $this->seeStatusCode(302);
         $this->assertHasOldInput();
         $this->assertSessionHasErrors();
-        $this->seeStatusCode(302);
     }
 
     /**
