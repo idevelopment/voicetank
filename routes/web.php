@@ -17,6 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Github - Social authencation.
+Route::get('auth/github', 'Auth\GithubController@redirectToProvider');
+Route::get('auth/github/callback', 'Auth\GithubController@handleProviderCallback');
+
+// Facebook - Social Authencation.
+Route::get('auth/facebook', 'Auth\FacebookController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\FacebookController@handleProviderCallback');
+
 Route::get('/home', 'HomeController@index');
 
 Route::get('/users/departments', 'DepartmentsController@index')->name('departments.index');
