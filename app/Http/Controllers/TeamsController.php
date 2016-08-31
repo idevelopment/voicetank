@@ -2,30 +2,115 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\TeamsValidator;
 
+use App\Departments;
+use App\Teams;
+use App\User;
+
+use Illuminate\Http\Request;
 use App\Http\Requests;
 
+/**
+ * Class TeamsController
+ * @package App\Http\Controllers
+ */
 class TeamsController extends Controller
 {
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
-  public function __construct()
-  {
-      $this->middleware('auth');
-      $this->middleware('lang');
-  }
+    /**
+     * Create a new controller instance.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-  /**
-   * Show the application dashboard.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function index()
-  {
-      return view('teams/index');
-  }
+    /**
+     * Get a team overview in the application.
+     *
+     * @url:platform  GET|HEAD: /users/teams
+     * @see:phpunit   Teamstest::testTeamOverview()
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index()
+    {
+        $data['teams'] = Teams::with('departments')->paginate(15);
+        $data['users'] = User::all();
+
+        return view('teams.index', $data);
+    }
+
+    /**
+     * Show the registration form.
+     *
+     * @url:platform  GET|HEAD: /users/teams/register
+     * @see:phpunit   TeamsTest::testCreateWizardView()
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function register()
+    {
+        $data['departmens'] = Departments::all();
+        $data['users'] = User::all();
+
+        return view('teams.create', $data);
+    }
+
+    /**
+     * Show a specific team.
+     *
+     * @url:platform  GET|HEAD:
+     * @see:phpunit
+     *
+     * @param  int $id the team id in the database.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($id)
+    {
+        // TODO: Register route
+        return view('teams.show');
+    }
+
+    /**
+     * Update a team in the database.
+     *
+     * @url:platform  POST:
+     * @see:phpunit
+     *
+     * @param  TeamsValidator $input
+     * @param  int $id the team id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(TeamsValidator $input, $id)
+    {
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', '');
+
+        return redirect()->back();
+    }
+
+    /**
+     * Save a new team in the application.
+     *
+     * @url:platform  POST:
+     * @see:phpunit
+     * @see:phpunit
+     *
+     * @param  TeamsValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function save(TeamsValidator $input)
+    {
+        $team = Teams::create(['leader', '_token', 'users']);
+
+        $new  = Teams::find($team->id);
+        $new->leader()->attach($input->leader);
+        $new->members()->sync($input->users);
+
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'The team has been added.');
+
+        return redirect()->back();
+    }
 }
