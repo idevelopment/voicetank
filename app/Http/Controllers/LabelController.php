@@ -100,8 +100,10 @@ class LabelController extends Controller
      */
     public function destroy($id)
     {
+        Labels::destroy($id);
+
         session()->flash('class', 'alert alert-success');
-        session()->flash('message', '');
+        session()->flash('message', 'The label has been deleted');
 
         return redirect()->back();
     }
