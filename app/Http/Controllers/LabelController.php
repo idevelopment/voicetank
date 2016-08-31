@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Labels;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -32,8 +33,8 @@ class LabelController extends Controller
      */
     public function index()
     {
-        $data['labels'] = '';
-        return view('');
+        $data['labels'] = Label::paginate(15);
+        return view('', $data);
     }
 
     /**
@@ -65,7 +66,8 @@ class LabelController extends Controller
      */
     public function show($id)
     {
-        return view('');
+        $data['label'] = Labels::find($id);
+        return view('', $data);
     }
 
     /**
