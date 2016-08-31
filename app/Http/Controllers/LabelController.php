@@ -83,8 +83,10 @@ class LabelController extends Controller
      */
     public function update(Requests\LabelValidator $input, $id)
     {
+        Labels::find($id)->update($input->except('_token'));
+
         session()->flash('class', 'alert alert-success');
-        session()->flash('message', '');
+        session()->flash('message', 'The label has been updated.');
 
         return redirect()->back();
     }

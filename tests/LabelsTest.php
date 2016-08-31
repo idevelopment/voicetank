@@ -101,7 +101,23 @@ class LabelsTest extends TestCase
      */
     public function testLabelUpdateWithoutErrors()
     {
-        //
+        $db['name']  = $this->labels->name;
+        $db['color'] = $this->labels->color;
+
+        $input['name']  = 'testing label';
+        $input['color'] = 'testing color';
+
+        $session['class']   = 'alert alert-success';
+        $session['message'] = 'The label has been updated.';
+
+        $this->withoutMiddleware();
+        $this->authencation();
+        $this->seeInDatabase('labels', $db);
+        $this->post(route('labels.update', $this->paramId), $input);
+        $this->dontSeeInDatabase('labels', $db);
+        $this->seeInDatabase('labels', $input);
+        $this->seeStatusCode(302);
+        $this->session($session);
     }
 
     /**
@@ -115,7 +131,11 @@ class LabelsTest extends TestCase
      */
     public function testLabelUpdateWithErrors()
     {
-        //
+        $this->authencation();
+        $this->post(route('labels.update', $this->paramId), []);
+        $this->assertHasOldInput();
+        $this->assertSessionHasErrors();
+        $this->seeStatusCode(302);
     }
 
     /**
