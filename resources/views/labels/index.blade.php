@@ -33,7 +33,7 @@
                               <div class="clearfix">&nbsp;</div>
                               <div class="btn-group">
                                 <button class="btn btn-sm btn-success" type="button"><i class="fa fa-plus"></i> Save changes</button>
-                                <button class="btn btn-sm btn-default" type="button"><i class="fa fa-plus"></i> New label</button>
+                                <button class="btn btn-sm btn-default" type="button" data-toggle="modal" data-target="#newLabel"><i class="fa fa-plus"></i> New label</button>
                                 <button class="btn btn-sm btn-danger" type="button" data-placement="bottom" data-toggle="tooltip" data-original-title="Remove label"><i class="fa fa-trash-o"></i></button>
                               </div>
                             </div>
@@ -69,6 +69,9 @@
                 </div>
               </div>
             </div>
+
+            {{-- Partials --}}
+            @include('labels.partials.create')
 
             <!-- Bootstrap Colorpicker -->
     <script>
