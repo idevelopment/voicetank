@@ -33,6 +33,12 @@ Route::post('/profile/update/info', 'AccountController@updateInfo')->name('profi
 Route::post('/profile/update/security', 'AccountController@updatePassword')->name('profile.security');
 Route::post('/profile/update/contact', 'AccountController@updateContact')->name('profile.contact');
 
+Route::get('/feedback/labels', 'LabelController@index')->name('labels.index');
+Route::get('/feedback/labels/{id}', 'LabelController@show')->name('labels.show');
+Route::get('/feedback/labels/destroy/{id}', 'LabelController@destroy')->name('labels.destroy');
+Route::post('/feedback/labels/update/{id}', 'LabelController@update')->name('labels.update');
+Route::post('/feedback/labels', 'LabelController@store')->name('labels.store');
+
 Route::get('/users/list', 'UsersController@index')->name('users.index');
 Route::get('/users/create', 'UsersController@register')->name('users.register');
 Route::post('/users/save', 'UsersController@save')->name('users.save');
