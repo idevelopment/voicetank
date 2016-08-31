@@ -60,18 +60,6 @@ class LabelsTest extends TestCase
     }
 
     /**
-     * GET|HEAD:  /feedback/labels/{id}
-     * ROUTE:     labels.show
-     *
-     * @group all
-     * @group labels
-     */
-    public function testLabelShowMethod()
-    {
-        //
-    }
-
-    /**
      * GET|HEAD:  /feedback/labels/destroy\{id}
      * ROUTE:     labels.destroy
      *
@@ -151,7 +139,17 @@ class LabelsTest extends TestCase
      */
     public function testLabelCreateWithoutErrors()
     {
-        //
+        $input['name']  = 'Label name';
+        $input['color'] = 'Label color';
+
+        $session['class']   = 'alert alert-success';
+        $session['message'] = 'The label has been created';
+
+        $this->authencation();
+        $this->post(route('labels.store'), $input);
+        $this->seeInDatabase('labels', $input);
+        $this->seeStatusCode(302);
+        $this->session($session);
     }
 
     /**
@@ -165,6 +163,10 @@ class LabelsTest extends TestCase
      */
     public function testLabelCreateWithErrors()
     {
-        //
+        $this->authencation();
+        $this->post(route('labels.store'), []);
+        $this->assertHasOldInput();
+        $this->assertSessionHasErrors();
+        $this->seeStatusCode(302);
     }
 }

@@ -34,7 +34,6 @@ Route::post('/profile/update/security', 'AccountController@updatePassword')->nam
 Route::post('/profile/update/contact', 'AccountController@updateContact')->name('profile.contact');
 
 Route::get('/feedback/labels', 'LabelController@index')->name('labels.index');
-Route::get('/feedback/labels/{id}', 'LabelController@show')->name('labels.show');
 Route::get('/feedback/labels/destroy/{id}', 'LabelController@destroy')->name('labels.destroy');
 Route::post('/feedback/labels/update/{id}', 'LabelController@update')->name('labels.update');
 Route::post('/feedback/labels', 'LabelController@store')->name('labels.store');

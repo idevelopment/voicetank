@@ -49,25 +49,12 @@ class LabelController extends Controller
      */
     public function store(Requests\LabelValidator $input)
     {
+        Labels::create($input->except('_token'));
+
         session()->flash('class', 'alert alert-success');
-        session()->flash('message', '');
+        session()->flash('message', 'The label has been created');
 
         return redirect()->back();
-    }
-
-    /**
-     * Display a specific label in the application.
-     *
-     * @url:platform  GET\HEAD: /feedback/labels/{id}
-     * @see:phpunit   LabelsTest::testLabelShowMethod()
-     *
-     * @param  int $id the label id in the database.
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function show($id)
-    {
-        $data['label'] = Labels::find($id);
-        return view('', $data);
     }
 
     /**
