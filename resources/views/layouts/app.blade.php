@@ -14,7 +14,13 @@
     <link href="/css/backend.css" rel="stylesheet">
     <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Bootstrap Colorpicker -->
+    <link href="/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
+    <!-- jQuery -->
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Scripts -->
     <script>
@@ -218,10 +224,7 @@
   <!-- /footer content -->
 </div>
 
-<!-- jQuery -->
-<script src="/vendors/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <!-- FastClick -->
 <script src="/vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
@@ -243,7 +246,8 @@
 <script src="/vendors/DateJS/build/date.js"></script>
 <!-- bootstrap-daterangepicker -->
 <script src="/vendors/moment/moment.min.js"></script>
-
+<!-- Bootstrap Colorpicker -->
+<script src="/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="/js/custom.min.js"></script>
 

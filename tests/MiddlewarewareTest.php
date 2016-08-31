@@ -12,7 +12,7 @@ class MiddlewarewareTest extends TestCase
     /**
      * Test language middlware
      *
-     * @group ll
+     * @group all
      * @group middleware
      */
     public function testLanguageMiddleware()
