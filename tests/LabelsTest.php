@@ -54,7 +54,9 @@ class LabelsTest extends TestCase
      */
     public function testLabelOverview()
     {
-        //
+        $this->authencation();
+        $this->visit(route('labels.index'));
+        $this->seeStatusCode(200);
     }
 
     /**

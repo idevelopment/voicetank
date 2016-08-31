@@ -33,8 +33,8 @@ class LabelController extends Controller
      */
     public function index()
     {
-        $data['labels'] = Label::paginate(15);
-        return view('index', $data);
+        $data['labels'] = Labels::paginate(15);
+        return view('labels.index', $data);
     }
 
     /**
