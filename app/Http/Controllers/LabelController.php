@@ -25,6 +25,9 @@ class LabelController extends Controller
     /**
      * Get all the labels in the backend.
      *
+     * @url:platform  GET\HEAD: /feedback/labels
+     * @see:phpunit
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -35,11 +38,17 @@ class LabelController extends Controller
 
     /**
      * Store a new label in the database.
+     *
+     * @url:platform  POST: /feedback/labels
+     * @see:phpunit
+     *
+     * @param  Requests\LabelValidator $input
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store()
+    public function store(Requests\LabelValidator $input)
     {
-        session()->flash('', '');
-        session()->flash('', '');
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', '');
 
         return redirect()->back();
     }
@@ -47,16 +56,22 @@ class LabelController extends Controller
     /**
      * Display a specific label in the application.
      *
+     * @url:platform  GET\HEAD: /feedback/labels/{id}
+     * @see:phpunit
+     *
      * @param  int $id the label id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
-        return view('')
+        return view('');
     }
 
     /**
      * Update a label in the database.
+     *
+     * @url:platform  POST: /feedback/labels/update/{id}
+     * @see:phpunit
      *
      * @param  Requests\LabelValidator $input
      * @param  int $id the id for the label in the database.
@@ -64,8 +79,8 @@ class LabelController extends Controller
      */
     public function update(Requests\LabelValidator $input, $id)
     {
-        session()->flash('', '');
-        session()->flash('', '');
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', '');
 
         return redirect()->back();
     }
@@ -73,13 +88,16 @@ class LabelController extends Controller
     /**
      * Destroy a label out off the database.
      *
+     * @url:platform  GET\HEAD:  /feedback/labels/destroy/{id}
+     * @see:phpunit
+     *
      * @param  int $id the id for the label in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        session()->flash('', '');
-        session()->flash('', '');
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', '');
 
         return redirect()->back();
     }
