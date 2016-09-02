@@ -32,9 +32,9 @@
                           <td>Administrator </td>
                           <td><button type="button" class="btn btn-success btn-xs">Active</button></td>
                           <td>
-                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                            <a href="{{ route('users.show', ['id' => $user->id]) }}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
                             <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                            <a href="{{ route('users.destroy', ['id' => $user->ids]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                           </td>
                         </tr>
                         @endforeach

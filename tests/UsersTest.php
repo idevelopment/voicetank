@@ -33,6 +33,39 @@ class UsersTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
+     * GET|HEAD:  /users/create
+     * ROUTE:     users.register
+     *
+     * @group all
+     * @group acl
+     */
+    public function testUserRegisterView()
+    {
+        $this->authencation();
+        $this->visit(route('users.register'));
+        $this->seeStatusCode(200);
+    }
+
+    /**
+     * GET|HEAD:  /users/{id}
+     * ROUTE:     users.show
+     *
+     * @group all
+     * @group acl
+     */
+    public function testUsersSpecific()
+    {
+        $route = route('users.show', ['id' => $this->user->id]);
+
+        $this->authencation();
+        $this->visit($route);
+        $this->seeStatusCode(200);
+    }
+
+    /**
+=======
+>>>>>>> development
      * GET|HEAD:  /users/list
      * ROUTE:     users.index
      *
