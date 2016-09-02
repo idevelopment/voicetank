@@ -23,6 +23,7 @@ class UsersTest extends TestCase
         // Database transactions factories.
         $this->user = factory(App\User::class)->create();
     }
+
     /**
      * Authencation class -> Used for test authencated routes.
      */
@@ -33,7 +34,6 @@ class UsersTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
      * GET|HEAD:  /users/create
      * ROUTE:     users.register
      *
@@ -64,8 +64,6 @@ class UsersTest extends TestCase
     }
 
     /**
-=======
->>>>>>> development
      * GET|HEAD:  /users/list
      * ROUTE:     users.index
      *
