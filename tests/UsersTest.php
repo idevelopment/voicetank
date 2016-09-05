@@ -4,6 +4,9 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+/**
+ * Class UsersTest
+ */
 class UsersTest extends TestCase
 {
     // DatabaseMigrations   = Used for the database migrations.
