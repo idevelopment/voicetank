@@ -13,8 +13,11 @@
     <!-- Styles -->
     <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/frontend.css" rel="stylesheet">
+    <link href="/css/jquery.upvote.css" rel="stylesheet">
+
 
     <!-- Scripts -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -23,7 +26,7 @@
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
@@ -88,10 +91,34 @@
             </div>
         </div>
     </nav>
+  <div class="container-fluid">
+    <div class="jumbotron">
+    <p class="text-left">Please provide here your suggestion for new functionality for ProjectName.<br>
+       We encourage you to review and vote for suggestions of others.<br>
+    </p>
+    </div>
+    <div class="row">
+     @yield('content')
+     <div class="col-md-3">
+       <div class="list-group">
+           <a href="{{url('feedback/create')}}" class="btn btn-success btn-block"><i class="fa fa-plus"></i> Submit suggesstion</a>
+       </div>
 
-    @yield('content')
-
+         <div class="heading_b"><span class="heading_text">Categories</span></div>
+         <div class="list-group">
+             <a href="javascript:void(0)" class="active list-group-item">All</a>
+             <a href="javascript:void(0)" class="list-group-item">User interface <span class="pull-right badge">15</span></a>
+             <a href="javascript:void(0)" class="list-group-item">Configuration Management <span class="pull-right badge">15</span></a>
+             <a href="javascript:void(0)" class="list-group-item">Database <span class="pull-right badge">15</span></a>
+             <a href="javascript:void(0)" class="list-group-item">Reports <span class="pull-right badge">15</span></a>
+             <a href="javascript:void(0)" class="list-group-item">Sales <span class="pull-right badge">15</span></a>
+         </div>
+     </div>
+</div>
+</div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/jquery.upvote.js"></script>
+
 </body>
 </html>

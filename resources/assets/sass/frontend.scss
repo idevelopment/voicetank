@@ -7,3 +7,23 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Frontend files
+@import "_partials/front/general";
+@import "_partials/front/buttons";
+@import "_partials/front/typography";
+@import "_partials/front/panel";
+@import "_partials/front/lists";
+
+.form-horizontal .control-label{
+   text-align:left;
+}
+
+@media only screen and (min-width: 992px) {
+  .col-sep-md {
+    border-right: 1px solid #eee;
+    min-height:400px;
+  }
+  .text-right-md {
+    text-align: right;
+  }
+}
