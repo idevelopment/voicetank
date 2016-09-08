@@ -45,4 +45,9 @@ class CommentsController extends Controller
 
         return redirect()->back();
     }
+
+    public function report()
+    {
+
+    }
 }
