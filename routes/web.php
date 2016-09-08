@@ -60,6 +60,6 @@ Route::get('/users/destroy/{id}', 'UsersController@destroy')->name('users.destro
 Route::post('/users/save', 'UsersController@save')->name('users.save');
 
 // Front-end feedback routes
-Route::get('/feedback/create', 'IdeaController@register')->jname('feedback.register');
+Route::get('/feedback/create', 'IdeaController@register')->name('feedback.register');
 Route::get('/feedback/details/{fid}', 'IdeaController@show')->name('feedback.show');
 Route::get('/feedback/destroy/{fid}', 'IdeaController@Destroy')->name('feedback.destroy');
