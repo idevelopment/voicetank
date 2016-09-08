@@ -49,7 +49,11 @@ class IdeaController extends Controller
      */
     public function store(IdeaValidator $input)
     {
-        Idea::create($input->except('_token'));
+        $idea = new Idea;
+        $idea->title = $input->title;
+        $idea->description = $input->description;
+        $idea->category()->associate($input->category_id);
+        $idea->save();
 
         session()->flash('class', 'alert alert-success');
         session()->flash('message', 'Your suggestion is successfully saved.');
@@ -60,7 +64,7 @@ class IdeaController extends Controller
     /**
      * Show a specific feedback item.
      *
-     * @url:platform  GET|HEAD:
+     * @url:platform  GET|HEAD: /feedback/details/{fid}
      * @see:phpunit   TODO: Write test.
      *
      * @param  int $fid the feedback item id in the database.
@@ -75,7 +79,7 @@ class IdeaController extends Controller
     /**
      * Delete a update item in the database.
      *
-     * @url:platform  GET|HEAD:
+     * @url:platform  GET|HEAD: /feedback/destroy/{fid}
      * @see:phpunit   TODO: Write test.
      *
      * @param  int $fid The feedback item id in the database.
