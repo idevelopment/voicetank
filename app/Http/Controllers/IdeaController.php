@@ -52,6 +52,8 @@ class IdeaController extends Controller
         $idea = new Idea;
         $idea->title = $input->title;
         $idea->description = $input->description;
+
+        $idea->creator()->associate(auth()->user()->id);
         $idea->category()->associate($input->category_id);
         $idea->save();
 

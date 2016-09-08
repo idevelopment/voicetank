@@ -18,6 +18,16 @@ class Idea extends Model
     protected $fillable = ['title', 'category_id', 'description'];
 
     /**
+     * Creator relation -> used for the details off the creator.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function creator()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    /**
      * Idea -> category description.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
