@@ -33,7 +33,7 @@
   <!-- end feedback-box -->
   <div class="row">
     <div class="col-md-12">
-      <form action="{{ route('feedback.comment', ['fid' => 1])) }}" method="post" class="form-horizontal">
+      <form action="{{ route('feedback.comment', ['fid' => 1]) }}" method="post" class="form-horizontal">
           {{--  CSRF FIELD--}}
           {{ csrf_field() }}
 
