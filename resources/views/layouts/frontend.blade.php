@@ -39,7 +39,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                  <img src="#" alt="VoiceTank">
+                   <i class="fa fa-bullhorn"></i> VoiceTank
                 </a>
             </div>
 
