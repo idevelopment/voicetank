@@ -13,8 +13,11 @@
     <!-- Styles -->
     <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/frontend.css" rel="stylesheet">
+    <link href="/css/jquery.upvote.css" rel="stylesheet">
+
 
     <!-- Scripts -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -23,7 +26,7 @@
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
@@ -36,7 +39,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    VoiceTank
+                  <img src="#" alt="VoiceTank">
                 </a>
             </div>
 
@@ -50,7 +53,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <span class="fa fa-language"></span>
+                            <span class="fa fa-language fa-lg"></span>
                         </a>
 
                         <ul role="menu" class="dropdown-menu">
@@ -61,8 +64,8 @@
 
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}"><span class="fa fa-user fa-lg"></span></a></li>
+                        <li><a href="{{ url('/register') }}"><span class="fa fa-user-plus fa-lg"></span></a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -88,10 +91,37 @@
             </div>
         </div>
     </nav>
+  <div class="container-fluid">
+   @if(Request::is('/') || Request::is('feedback/create') )
+    <div class="jumbotron">
+    <p class="text-left">Please provide here your suggestion for new functionality for ProjectName.<br>
+       We encourage you to review and vote for suggestions of others.<br>
+    </p>
+    </div>
+    @endif
 
-    @yield('content')
+    <div class="row">
+     @yield('content')
+     <div class="col-md-3">
+       <div class="list-group">
+           <a href="{{url('feedback/create')}}" class="btn btn-success btn-block"><i class="fa fa-plus"></i> Submit suggesstion</a>
+       </div>
 
+         <div class="heading_b"><span class="heading_text">Categories</span></div>
+         <div class="list-group">
+             <a href="javascript:void(0)" class="active list-group-item">All</a>
+             <a href="javascript:void(0)" class="list-group-item">User interface <span class="pull-right badge">15</span></a>
+             <a href="javascript:void(0)" class="list-group-item">Configuration Management <span class="pull-right badge">15</span></a>
+             <a href="javascript:void(0)" class="list-group-item">Database <span class="pull-right badge">15</span></a>
+             <a href="javascript:void(0)" class="list-group-item">Reports <span class="pull-right badge">15</span></a>
+             <a href="javascript:void(0)" class="list-group-item">Sales <span class="pull-right badge">15</span></a>
+         </div>
+     </div>
+</div>
+</div>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/jquery.upvote.js"></script>
+
 </body>
 </html>

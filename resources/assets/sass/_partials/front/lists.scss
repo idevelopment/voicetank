@@ -1,0 +1,14 @@
+.list-group-item {
+  border: none;
+}
+.list-group-item + .list-group-item {
+  border-top: 1px solid #eee;
+}
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  background: #eee;
+  color: #222222;
+  z-index: auto;
+  border-color: #eee;
+}

@@ -1,0 +1,30 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+body {
+  background: #ffffff;
+  color: #222222;
+  width: 100%;
+}
+
+#wrapper {
+	display:block;
+	margin:0 auto;
+	position: relative;
+}
+
+.container-fluid {
+	max-width:1440px;
+	width:auto;
+    margin:0 auto;
+	position: relative;
+}
+.container-fluid.vertical-align-content {
+	float:none;
+}

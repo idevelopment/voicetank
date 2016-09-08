@@ -58,3 +58,11 @@ Route::get('/users/{id}', 'UsersController@show')->name('users.show');
 Route::get('/users/create', 'UsersController@register')->name('users.register');
 Route::get('/users/destroy/{id}', 'UsersController@destroy')->name('users.destroy');
 Route::post('/users/save', 'UsersController@save')->name('users.save');
+
+Route::get('/feedback/create', function () {
+    return view('feedback/create');
+});
+
+Route::get('/feedback/details', function () {
+    return view('feedback/details');
+});
