@@ -38,6 +38,13 @@ $factory->define(App\Idea::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Comments::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => $faker->numberBetween(1, 10),
+        'comment' => $faker->sentences(3)
+    ];
+});
+
 $factory->define(App\Countries::class, function (Faker\Generator $faker) {
     return ['country' => $faker->country];
 });

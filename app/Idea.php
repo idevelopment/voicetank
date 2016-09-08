@@ -26,4 +26,14 @@ class Idea extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    /**
+     * Get all the comments for the feedback item.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function comments()
+    {
+        return $this->belongsToMany('App\Comments')->withTimestamps();
+    }
 }

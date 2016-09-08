@@ -20,6 +20,13 @@ class CreateIdeasTable extends Migration
             $table->text('description');
             $table->timestamps();
         });
+
+        Schema::create('comments_idea', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('comments_id');
+            $table->integer('idea_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -30,5 +37,6 @@ class CreateIdeasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('ideas');
+        Schema::dropIfExists('comments_idea');
     }
 }
