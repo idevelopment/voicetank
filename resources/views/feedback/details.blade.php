@@ -31,13 +31,38 @@
      <!-- end desc -->
   </div>
   <!-- end feedback-box -->
+  <div class="row">
+    <div class="col-md-12">
+      <form action="" method="post" class="form-horizontal">
+       <div class="form-group">
+          <label for="name" class="col-md-3 control-label">Name</label>
+          <div class="col-md-8">
+            <input id="name" name="name" value="Registered user" class="form-control" disabled="">
+          </div>
+        </div>
+
+        <div class="form-group">
+           <label for="message" class="col-md-3 control-label">Message</label>
+           <div class="col-md-8">
+             <textarea name="message" id="message" class="form-control"></textarea>
+           </div>
+         </div>
+
+         <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" class="btn btn-primary btn-sm">Reply</button>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
 
   <div class="panel">
     <div class="panel-heading">
       <h4>3 Comments</h4>
     </Div>
   <div class="panel-body comments">
-    <ul class="media-list">
+        <ul class="media-list">
         <li class="media">
             <div class="comment">
               <div class="col-md-2">
@@ -52,6 +77,10 @@
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.
                     </p>
+                    <div class="pull-right">
+                     <button class="btn btn-primary btn-xs">Report</button>
+                     <button class="btn btn-danger btn-xs">Delete</button>
+                  </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -70,7 +99,10 @@
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.
                     </p>
-
+                    <div class="pull-right">
+                     <button class="btn btn-primary btn-xs">Report</button>
+                     <button class="btn btn-danger btn-xs">Delete</button>
+                  </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -89,13 +121,19 @@
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.
                     </p>
+                    <div class="pull-right">
+                     <button class="btn btn-primary btn-xs">Report</button>
+                     <button class="btn btn-danger btn-xs">Delete</button>
+                  </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </li>
     </ul>
+  </div>
 </div>
-      </div>
+
+
     </div>
 
   </div>

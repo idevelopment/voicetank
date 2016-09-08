@@ -13,7 +13,7 @@
     </div><!-- end feedback-media -->
 
     <div class="feedback-desc col-md-8 col-sm-8">
-     <h3><a href="#">Install wizard for new setups</a></h3>
+     <h3><a href="{{url('feedback/details')}}">Install wizard for new setups</a></h3>
       <div class="feedback-meta clearfix">
         <a href="#"><i class="fa fa-calendar"></i> 08/09/2016 04:00</a>
        <a href="#"><i class="fa fa-user"></i> Glenn Hermans</a>
@@ -21,7 +21,7 @@
        <a href="#"><i class="fa fa-folder"></i> User interface</a>
      </div><!-- end meta -->
        <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua The standard chunk of Lorem Ipsum used since the is reproduced below for those interested. Ded by English versions from the translation by H. Rackham. [..]</p>
-         <a href="#" class="btn btn-info btn-sm" title="">Read More</a>
+         <a href="{{url('feedback/details')}}" class="btn btn-info btn-sm" title="">Read More</a>
      </div><!-- end desc -->
     </div><!-- end feedback-box -->
    </div><!-- end feedback-wrapper -->
@@ -37,7 +37,7 @@
      </div><!-- end feedback-media -->
 
      <div class="feedback-desc col-md-8 col-sm-8">
-      <h3><a href="#">Integrate homestead</a></h3>
+      <h3><a href="{{url('feedback/details')}}">Integrate homestead</a></h3>
        <div class="feedback-meta clearfix">
          <a href="#"><i class="fa fa-calendar"></i> 08/09/2016 04:00</a>
          <a href="#"><i class="fa fa-user"></i> Glenn Hermans</a>
@@ -46,7 +46,7 @@
       </div><!-- end meta -->
 
         <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua The standard chunk of Lorem Ipsum used since the is reproduced below for those interested. Ded by English versions from the translation by H. Rackham. [..]</p>
-          <a href="#" class="btn btn-info btn-sm" title="">Read More</a>
+          <a href="{{url('feedback/details')}}" class="btn btn-info btn-sm" title="">Read More</a>
       </div><!-- end desc -->
      </div><!-- end feedback-box -->
     </div><!-- end feedback-wrapper -->
