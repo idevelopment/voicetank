@@ -39,7 +39,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    VoiceTank
+                  <img src="#" alt="VoiceTank">
                 </a>
             </div>
 
@@ -92,11 +92,14 @@
         </div>
     </nav>
   <div class="container-fluid">
+   @if(Request::is('/') || Request::is('feedback/create') )
     <div class="jumbotron">
     <p class="text-left">Please provide here your suggestion for new functionality for ProjectName.<br>
        We encourage you to review and vote for suggestions of others.<br>
     </p>
     </div>
+    @endif
+
     <div class="row">
      @yield('content')
      <div class="col-md-3">

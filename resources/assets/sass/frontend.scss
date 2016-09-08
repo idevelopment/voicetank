@@ -9,15 +9,13 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 // Frontend files
 @import "_partials/front/general";
+@import "_partials/front/typography";
+@import "_partials/front/navbar";
 @import "_partials/front/buttons";
 @import "_partials/front/forms";
-@import "_partials/front/typography";
 @import "_partials/front/panel";
 @import "_partials/front/lists";
-
-.form-horizontal .control-label{
-   text-align:left;
-}
+@import "_partials/front/feedback";
 
 @media only screen and (min-width: 992px) {
   .col-sep-md {

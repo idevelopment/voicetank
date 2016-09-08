@@ -62,3 +62,7 @@ Route::post('/users/save', 'UsersController@save')->name('users.save');
 Route::get('/feedback/create', function () {
     return view('feedback/create');
 });
+
+Route::get('/feedback/details', function () {
+    return view('feedback/details');
+});

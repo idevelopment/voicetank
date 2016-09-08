@@ -1,0 +1,97 @@
+.feedback-desc h3 a,
+.feedback-desc h3 {
+  text-align: left;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 14px;
+    color: #474747 ;
+    font-weight: 500;
+}
+.feedback-media img {
+    width: 100%;
+    margin: 4px 20px 0 0;
+}
+
+.feedback-meta {
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.feedback-meta a {
+    color: #919191;
+    font-size: 13px;
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+.feedback-meta i {
+    padding-right: 2px;
+}
+
+.feedback-wrapper .feedback-desc h3,
+.feedback-wrapper .feedback-desc h3 a {
+    font-size: 21px;
+    padding-top: 20px;
+}
+
+.feedback-wrapper .feedback-desc p {
+    margin: 20px 0 ;
+    padding: 0 ;
+}
+
+.feedback-wrapper.single-wrapper .feedback-meta {
+    margin-bottom: 10px;
+}
+
+.feedback-wrapper.single-wrapper .feedback-desc p {
+    padding-bottom: 20px ;
+    margin: 0 ;
+}
+
+.feedback-wrapper {
+    display: block;
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ededed;
+}
+
+.comments img {
+    max-width: 70px;
+    margin-right: 10px
+}
+
+.comments {
+    padding: 0;
+    margin: 0
+}
+
+.comments .text-success {
+    color: #333;
+    margin-bottom: 5px;
+    display: inline-block
+}
+
+.comments .text-muted {
+    color: #777;
+    margin-left: 5px
+}
+
+.comments .media-list li {
+    border: 1px solid #ededed;
+    margin: 20px 0;
+    background-color: transparent;
+    display: block;
+    padding: 20px;
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out
+}
+
+.comments .media-list li p {
+    margin: 0;
+    padding: 0
+}
