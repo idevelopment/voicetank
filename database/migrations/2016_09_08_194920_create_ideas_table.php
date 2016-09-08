@@ -15,7 +15,7 @@ class CreateIdeasTable extends Migration
     {
         Schema::create('ideas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('creator_id');
             $table->integer('category_id');
             $table->string('title');
             $table->text('description');

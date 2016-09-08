@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Idea;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -36,6 +37,7 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('welcome');
+        $data['ideas'] = Idea::with('comments')->paginate(10);
+        return view('welcome', $data);
     }
 }

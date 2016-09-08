@@ -118,7 +118,7 @@
                  @endforeach
              </div>
          @else
-             <div class="alert-warning">
+             <div class="alert alert-warning">
                  There are no categories registered.
              </div>
          @endif
