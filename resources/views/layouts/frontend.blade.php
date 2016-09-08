@@ -53,7 +53,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <span class="fa fa-language"></span>
+                            <span class="fa fa-language fa-lg"></span>
                         </a>
 
                         <ul role="menu" class="dropdown-menu">
@@ -64,8 +64,8 @@
 
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}"><span class="fa fa-user fa-lg"></span></a></li>
+                        <li><a href="{{ url('/register') }}"><span class="fa fa-user-plus fa-lg"></span></a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

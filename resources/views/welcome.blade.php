@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-9 col-sep-md hidden-print">
-                          <div class="col-md-2">
+                          <div class="pull-left">
 
                             <div class="upvote">
                               <a class="upvote"></a>
