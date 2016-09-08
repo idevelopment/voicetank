@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Category;
 use Illuminate\Support\ServiceProvider;
+use Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->share('categories', Category::all());
+        if (Schema::hasTable('categories')) {
+            view()->share('categories', Category::all());
+        } else {
+            view()->share('categories', []);
+        }
     }
 
     /**
