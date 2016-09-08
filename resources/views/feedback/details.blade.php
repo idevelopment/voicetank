@@ -33,18 +33,16 @@
   <!-- end feedback-box -->
   <div class="row">
     <div class="col-md-12">
-      <form action="" method="post" class="form-horizontal">
-       <div class="form-group">
-          <label for="name" class="col-md-3 control-label">Name</label>
-          <div class="col-md-8">
-            <input id="name" name="name" value="Registered user" class="form-control" disabled="">
-          </div>
-        </div>
+      <form action="{{ route('feedback.comment', ['fid' => 1])) }}" method="post" class="form-horizontal">
+          {{--  CSRF FIELD--}}
+          {{ csrf_field() }}
+
+          <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
 
         <div class="form-group">
            <label for="message" class="col-md-3 control-label">Message</label>
            <div class="col-md-8">
-             <textarea name="message" id="message" class="form-control"></textarea>
+             <textarea name="comment" id="message" class="form-control"></textarea>
            </div>
          </div>
 

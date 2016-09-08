@@ -62,3 +62,6 @@ Route::get('/feedback/create', 'IdeaController@register')->name('feedback.regist
 Route::get('/feedback/details/{fid}', 'IdeaController@show')->name('feedback.show');
 Route::get('/feedback/destroy/{fid}', 'IdeaController@Destroy')->name('feedback.destroy');
 Route::post('/feedback/create', 'IdeaController@store')->name('feedback.store');
+
+// Comments
+Route::post('/feedback/comment/{fid}', 'CommentsController@comment')->name('feedback.comment');
