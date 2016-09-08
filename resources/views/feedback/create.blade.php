@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-9 col-sep-md hidden-print">
-          <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+          <form class="form-horizontal" role="form" method="POST" action="">
               {{ csrf_field() }}
               <div class="form-group">
                   <label for="topic" class="col-md-2 control-label">Topic <span class="text-danger">*</span></label>
@@ -16,6 +16,10 @@
                         <div class="col-md-7">
                             <select id="category" name="category" class="form-control">
                               <option value="" selected="">-- Please select --</option>
+
+                                @foreach($items as $item)
+                                    <option value="{{ $item->id }}"> {{ $item->name }} </option>
+                                @endforeach
                             </select>
                         </div>
               </div>

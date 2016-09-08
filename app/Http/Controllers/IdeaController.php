@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\IdeaValidator;
+use App\Idea;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -23,6 +25,19 @@ class IdeaController extends Controller
     }
 
     /**
+     *
+     * @url:platform  GET|HEAD: /feedback/create
+     * @see:phpunit   TODO: Write test
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function register()
+    {
+        $data['items'] = Category::all();
+        return view('feedback/create', $data);
+    }
+
+    /**
      * Register a new idea in the database.
      *
      * @url:platform  POST:
@@ -34,6 +49,11 @@ class IdeaController extends Controller
      */
     public function store(IdeaValidator $input)
     {
+        Idea::create($input->except('_token'));
+
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'Your suggestion is successfully saved.');
+
         return redirect()->back();
     }
 }

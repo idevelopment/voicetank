@@ -30,6 +30,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Idea::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentences(1),
+        'category_id' => $faker->numberBetween(1, 5),
+        'description' => $faker->sentences(4),
+    ];
+});
 
 $factory->define(App\Countries::class, function (Faker\Generator $faker) {
     return ['country' => $faker->country];
