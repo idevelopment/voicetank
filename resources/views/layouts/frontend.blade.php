@@ -108,14 +108,20 @@
        </div>
 
          <div class="heading_b"><span class="heading_text">Categories</span></div>
-         <div class="list-group">
-             <a href="javascript:void(0)" class="active list-group-item">All</a>
-             <a href="javascript:void(0)" class="list-group-item">User interface <span class="pull-right badge">15</span></a>
-             <a href="javascript:void(0)" class="list-group-item">Configuration Management <span class="pull-right badge">15</span></a>
-             <a href="javascript:void(0)" class="list-group-item">Database <span class="pull-right badge">15</span></a>
-             <a href="javascript:void(0)" class="list-group-item">Reports <span class="pull-right badge">15</span></a>
-             <a href="javascript:void(0)" class="list-group-item">Sales <span class="pull-right badge">15</span></a>
-         </div>
+
+         @if (count($categories) > 0)
+             <div class="list-group">
+                 <a href="javascript:void(0)" class="active list-group-item">All</a>
+
+                 @foreach($categories as $category)
+                     <a href="javascript:void(0)" class="list-group-item">{!! $category->name !!} <span class="pull-right badge">15</span></a>
+                 @endforeach
+             </div>
+         @else
+             <div class="alert-warning">
+                 There are no categories registered.
+             </div>
+         @endif
      </div>
 </div>
 </div>

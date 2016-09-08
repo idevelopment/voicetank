@@ -33,7 +33,7 @@ class IdeaController extends Controller
      */
     public function register()
     {
-        $data['items'] = Category::all();
+        $data['items']      = Category::all();
         return view('feedback/create', $data);
     }
 
@@ -73,6 +73,7 @@ class IdeaController extends Controller
     public function show($fid)
     {
         $data['item'] = Idea::find($fid);
+
         return view('feedback.details', $data);
     }
 
