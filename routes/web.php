@@ -59,8 +59,7 @@ Route::get('/users/create', 'UsersController@register')->name('users.register');
 Route::get('/users/destroy/{id}', 'UsersController@destroy')->name('users.destroy');
 Route::post('/users/save', 'UsersController@save')->name('users.save');
 
-Route::get('/feedback/create', 'IdeaController@register');
-
-Route::get('/feedback/details', function () {
-    return view('feedback/details');
-});
+// Front-end feedback routes
+Route::get('/feedback/create', 'IdeaController@register')->jname('feedback.register');
+Route::get('/feedback/details/{fid}', 'IdeaController@show')->name('feedback.show');
+Route::get('/feedback/destroy/{fid}', 'IdeaController@Destroy')->name('feedback.destroy');

@@ -56,4 +56,36 @@ class IdeaController extends Controller
 
         return redirect()->back();
     }
+
+    /**
+     * Show a specific feedback item.
+     *
+     * @url:platform  GET|HEAD:
+     * @see:phpunit   TODO: Write test.
+     *
+     * @param  int $fid the feedback item id in the database.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($fid)
+    {
+        $data['item'] = Idea::find($fid);
+        return view('feedback.details', $data);
+    }
+
+    /**
+     * Delete a update item in the database.
+     *
+     * @url:platform  GET|HEAD:
+     * @see:phpunit   TODO: Write test.
+     *
+     * @param  int $fid The feedback item id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($fid)
+    {
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'Your feedback item has been deleted');
+
+        return redirect()->back();
+    }
 }
