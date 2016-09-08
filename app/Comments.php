@@ -26,4 +26,14 @@ class Comments extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * Get the comments per idea with this relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function ideas()
+    {
+        return $this->belongsToMany('App\Idea')->withTimestamps();
+    }
 }

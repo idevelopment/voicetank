@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comments;
 use App\Http\Requests\CommentValidator;
+use App\Http\Requests\ReportValidator;
 use App\Idea;
 use Illuminate\Http\Request;
 
@@ -46,8 +47,46 @@ class CommentsController extends Controller
         return redirect()->back();
     }
 
-    public function report()
+    /**
+     * Report a aggressive comment
+     *
+     * @url:platform  POST: TODO: register route
+     * @see:phpunit   TODO: Write validation fails test.
+     * @see:phpunit   TODO: Write validation no fail test.
+     *
+     * @param  ReportValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function report(ReportValidator $input)
     {
+        // TODO: Write validator
+        // TODO: Write the database backend.
 
+        session()->flash('class', 'alert alert-success');
+        session()->flash('message', 'The comment has been reported');
+
+        return redirect()->back();
+    }
+
+    /**
+     * Remove a comment from some idea.
+     *
+     * @url:platform:  TODO: Register route
+     * @see:phpunit:   TODO: Write phpunit test.
+     *
+     * @param  int $cid the comment id in the database
+     * @param  Comments $comment the comments model for the database;
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($cid, Comments $comment)
+    {
+        $comment->find($cid);
+        $comment->ideas()->sync([]);
+        $comment->destroy($cid);
+
+        session()->flash('class', 'alert aler-success');
+        session()->flash('message', 'The comment has been deleted');
+
+        return redirect()->back();
     }
 }
