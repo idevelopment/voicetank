@@ -4,10 +4,15 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Silber\Bouncer\Database\HasRolesAndAbilities;
 
+/**
+ * Class User
+ * @package App
+ */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasRolesAndAbilities;
 
     /**
      * The attributes that are mass assignable.
@@ -16,6 +21,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password',
+        'fname', 'address', 'zipcode',
+        'city', 'country', 'home_phone',
+        'office_phone', 'mobile'
     ];
 
     /**
@@ -26,4 +34,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function manager()
+    {
+        return $this->belongsToMany('App\Departments');
+    }
+
+    public function teams()
+    {
+        return $this->belongsToMany('App\Teams');
+    }
 }

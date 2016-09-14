@@ -14,7 +14,13 @@
     <link href="/css/backend.css" rel="stylesheet">
     <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Bootstrap Colorpicker -->
+    <link href="/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
+    <!-- jQuery -->
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Scripts -->
     <script>
@@ -23,7 +29,7 @@
         ]); ?>
     </script>
 </head>
-<body class="nav-md">
+<body class="nav-md footer_fixed">
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
@@ -39,7 +45,7 @@
             <div class="menu_section">
               <h3>General</h3>
               <ul class="nav side-menu">
-                <li><a href="{{url('home')}}"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a></li>
+                <li><a href="{{url('home')}}"><i class="fa fa-home"></i> Home</a></li>
                 <li><a><i class="fa fa-comments"></i>Feedback management <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="{{url('feedback/category')}}">Categories</a></li>
@@ -51,8 +57,8 @@
 
                 <li><a><i class="fa fa-folder"></i>Projects<span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="{{url('feedback/category')}}">Create</a></li>
-                    <li><a href="{{url('feedback/list')}}">List</a></li>
+                    <li><a href="{{url('projects/create')}}">Create</a></li>
+                    <li><a href="{{url('projects')}}">List</a></li>
                   </ul>
                 </li>
 
@@ -93,13 +99,13 @@
               <!-- Authentication Links -->
             <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="images/img.jpg" alt="">{{ Auth::user()->name }}
+                <i class="fa fa-user"></i> {{ Auth::user()->name }}
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                   <li><a href="javascript:;"> Profile</a></li>
                   <li>
-                    <a href="javascript:;">
+                    <a href="{{ route('profile') }}">
                       <span class="badge bg-red pull-right">50%</span>
                       <span>Settings</span>
                     </a>
@@ -119,15 +125,26 @@
                 </ul>
               </li>
 
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  <span class="fa fa-language"></span>
+                </a>
+
+                <ul role="menu" class="dropdown-menu">
+                  <li><a href="?lang=nl">Dutch</a></li>
+                  <li><a href="?lang=en">English</a></li>
+                </ul>
+              </li>
+
               <li role="presentation" class="dropdown">
                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                   <i class="fa fa-envelope-o"></i>
-                  <span class="badge bg-green">6</span>
+                  <span class="badge bg-red">6</span>
                 </a>
                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                   <li>
                     <a>
-                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span class="image"><i class="fa fa-user"></i></span>
                       <span>
                         <span>John Smith</span>
                         <span class="time">3 mins ago</span>
@@ -139,7 +156,7 @@
                   </li>
                   <li>
                     <a>
-                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span class="image"><i class="fa fa-user"></i></span>
                       <span>
                         <span>John Smith</span>
                         <span class="time">3 mins ago</span>
@@ -151,7 +168,7 @@
                   </li>
                   <li>
                     <a>
-                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span class="image"><i class="fa fa-user"></i></span>
                       <span>
                         <span>John Smith</span>
                         <span class="time">3 mins ago</span>
@@ -163,7 +180,7 @@
                   </li>
                   <li>
                     <a>
-                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span class="image"><i class="fa fa-user"></i></span>
                       <span>
                         <span>John Smith</span>
                         <span class="time">3 mins ago</span>
@@ -207,10 +224,7 @@
   <!-- /footer content -->
 </div>
 
-<!-- jQuery -->
-<script src="/vendors/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <!-- FastClick -->
 <script src="/vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
@@ -225,17 +239,27 @@
 <script src="/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
 <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
 <script src="/vendors/flot.curvedlines/curvedLines.js"></script>
+
+<script src="/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+
 <!-- DateJS -->
 <script src="/vendors/DateJS/build/date.js"></script>
 <!-- bootstrap-daterangepicker -->
 <script src="/vendors/moment/moment.min.js"></script>
-
+<!-- Bootstrap Colorpicker -->
+<script src="/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="/js/custom.min.js"></script>
 
 <!-- Flot -->
 <script>
 $(document).ready(function() {
+  $('#wizard').smartWizard();
+
+  $('.buttonNext').addClass('btn btn-success');
+  $('.buttonPrevious').addClass('btn btn-primary');
+  $('.buttonFinish').addClass('btn btn-default');
+
   //define chart clolors ( you maybe add more colors if you want or flot will add it automatic )
   var chartColours = ['#3498DB', '#3F97EB', '#72c380', '#6f7a8a', '#f7cb38', '#5a8022', '#2c7282'];
 

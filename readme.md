@@ -22,6 +22,13 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
+## Versioning 
+
+For transparency into our release cycle and in striving to maintain backward compatibility, Voicetank is maintained under the Semantic Versioning guidelines. 
+Sometimes we screw up, but we'll adhere to those rules whenever possible.
+
+See the Releases section of our GitHub project for changelogs for each release version of Voicetank. 
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
