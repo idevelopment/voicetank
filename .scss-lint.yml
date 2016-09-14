@@ -1,0 +1,15 @@
+linters:
+  VendorPrefix:
+    enabled: false
+
+  SelectorDepth:
+    enabled: false
+
+  QualifyingElement:
+    enabled: false
+
+  IdSelector:
+    enabled: false
+
+  SelectorFormat:
+    enabled: false

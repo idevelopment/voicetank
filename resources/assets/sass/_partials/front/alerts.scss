@@ -1,33 +1,46 @@
 .alert {
-  border: none;
-  color: #ffffff;
-  text-shadow: none;
-  padding: 10px 15px;
-  background: #f5f5f5;
+  background: $color-white-2;
+  border: 0;
   border-radius: 0;
-}
+  color: $color-white;
+  padding: 10px 15px;
+  text-shadow: none;
 
-.alert .alert-link {
-  font-weight: normal;
-  color: #ffffff;
-  text-decoration: underline;
-}
-.alert .alert-link:hover {
-  text-decoration: none;
-}
-.alert.alert-info {
-  background: #35b494;
-}
-.alert.alert-danger {
-  background: #d83b4b;
-}
-.alert.alert-success {
-  background: #87be4a;
-}
-.alert.alert-warning {
-  background: #f6b738;
-}
-.alert.alert-dismissable .close {
-  opacity: 0.4;
-  filter: alpha(opacity= 40 );
+  // .alert .alert-link
+  .alert-link {
+    color: $color-white;
+    font-weight: normal;
+    text-decoration: underline;
+
+    // .alert .alert-link:hover
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  // .alert.alert-info
+  &.alert-info {
+    background: $color-state-info;
+  }
+
+  // .alert.alert-danger
+  &.alert-danger {
+    background: $color-state-danger;
+  }
+
+  // .alert.alert-success
+  &.alert-success {
+    background: $color-state-success;
+  }
+
+  // .alert.alert-warning
+  &.alert-warning {
+    background: $color-state-warning;
+  }
+
+  // .alert.alert-dismissable .close
+  &.alert-dismissable .close {
+    filter: alpha(opacity = 40);
+    opacity: .4;
+  }
 }

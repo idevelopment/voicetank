@@ -1,72 +1,93 @@
 .page_heading {
-  margin: 0 0 30px;
   font: 400 26px / 36px;
+  margin: 0 0 30px;
+
+  // .page_heading > span
+  > span {
+    display: block;
+    font: 400 18px / 22px;
+  }
 }
-.page_heading > span {
-  display: block;
-  font: 400 18px / 22px;
-}
+
 .row_full .page_heading,
 .row .page_heading {
   margin: 0;
 }
+
 .heading_a {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
   margin: 0 0 15px;
   padding: 0 4px 4px;
+
+  // .heading_a .heading_text
+  .heading_text {
+    color: $color-feedback-black;
+    font: 400 16px / 22px;
+    text-transform: uppercase;
+  }
+
+  // .heading_a .heading_icon
+  .heading_icon {
+    color: $color-gray;
+    font-size: 16px;
+    line-height: 22px;
+    margin-right: 4px;
+  }
+
+  // .heading_a + .row
+  + .row {
+    margin-top: 20px;
+  }
 }
-.heading_a .heading_text {
-  font: 400 16px / 22px;
-  color: #333;
-  text-transform: uppercase;
-}
-.heading_a .heading_icon {
-  font-size: 16px;
-  line-height: 22px;
-  margin-right: 4px;
-  color: #999;
-}
-.heading_a + .row {
-  margin-top: 20px;
-}
+
 .heading_b {
   margin: 0 0 10px;
+
+  // .heading_b .heading_text
+  .heading_text {
+    font: 400 14px / 20px;
+    text-transform: uppercase;
+  }
 }
-.heading_b .heading_text {
-  font: 400 14px / 20px;
-  text-transform: uppercase;
-}
+
 .text_hr {
   margin: 10px 0;
+  position: relative;
   text-align: center;
-  position: relative;
+
+  // .text_hr:after
+  &:after {
+    border-top: 1px solid $color-white-3;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 11px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  // .text_hr > span
+  > span {
+    background: $color-white;
+    color: $color-gray-2;
+    display: inline-block;
+    font-size: 13px;
+    padding: 0 10px;
+    position: relative;
+    z-index: 10;
+  }
 }
-.text_hr > span {
-  display: inline-block;
-  font-size: 13px;
-  padding: 0 10px;
-  background: #fff;
-  position: relative;
-  z-index: 10;
-  color: #555;
-}
-.text_hr:after {
-  position: absolute;
-  left: 0;
-  top: 11px;
-  width: 100%;
-  border-top: 1px solid #eee;
-  height: 0;
-  content: '';
-  z-index: 1;
-}
-/* spacing */
+
+// spacing
 .sepH_a {
   margin-bottom: 10px;
 }
+
 .sepH_b {
   margin-bottom: 20px;
 }
+
 .sepH_c {
   margin-bottom: 30px;
 }

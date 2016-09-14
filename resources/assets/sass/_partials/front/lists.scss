@@ -1,14 +1,17 @@
 .list-group-item {
-  border: none;
+  border: 0;
+
+  // .list-group-item + .list-group-item
+  + .list-group-item {
+    border-top: 1px solid $color-list-white;
+  }
 }
-.list-group-item + .list-group-item {
-  border-top: 1px solid #eee;
-}
+
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-  background: #eee;
-  color: #222222;
+  background: $color-list-white;
+  border-color: $color-list-white;
+  color: $color-list-black;
   z-index: auto;
-  border-color: #eee;
 }

@@ -2,105 +2,126 @@ label {
   font-size: 13px;
   font-weight: normal;
 }
+
 legend {
-  border-width: 0 0 1px;
-  border-style: dashed;
-  border-color: #ddd;
-  padding-bottom: 6px;
+  border: 0 dashed $color-form-white-border;
+  border-bottom-width: 1px;
   font-size: 15px;
+  padding-bottom: 6px;
 }
-.form-horizontal .control-label{
-   text-align:left;
+
+.form-horizontal .control-label {
+  text-align: left;
 }
+
 .form-control {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #ddd;
-  padding: 6px;
+  border: 1px solid $color-form-white-border;
   box-shadow: none;
+  padding: 6px;
 }
+
 .form-control:-moz-placeholder,
 .form-control::-moz-placeholder,
 .form-control:-ms-input-placeholder,
 .form-control::-webkit-input-placeholder,
 .form-control.placeholder {
-  color: #bdc3c7;
+  color: $color-form-light-gray;
 }
+
 .form-control:focus {
   -webkit-backface-visibility: hidden;
-  outline: none;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  border-color: $color-form-white-form-control;
   box-shadow: none;
-  border-color: #e1e1e1;
+  outline: none;
+  -webkit-transition: .25s;
+  transition: .25s;
 }
+
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
-  opacity: 0.4;
-  filter: alpha(opacity= 40 );
+  filter: alpha(opacity=40);
+  opacity: .4;
 }
+
 .input-group-addon {
-  background-color: #d3d7d7;
-  border-color: #d3d7d7;
+  background-color: $color-form-lighter-gray;
+  border-color: $color-form-lighter-gray;
+
+  // .input-group-addon.input-group-success
+  &.input-group-success {
+    background-color: $color-form-info-white;
+    border-color: $color-form-info-white;
+  }
+
+  // .input-group-addon.input-group-info
+  &.input-group-info {
+    background-color: $color-form-info-lighter;
+    border-color: $color-form-info-lighter;
+  }
+
+  // .input-group-addon.input-group-warning
+  &.input-group-warning {
+    background-color: $color-form-white;
+    border-color: $color-form-white;
+  }
+
+  // .input-group-addon.input-group-danger
+  &.input-group-danger {
+    background-color: $color-form-white;
+    border-color: $color-form-white;
+  }
+
+  // .input-group-addon.input-group-primary
+  &.input-group-primary {
+    background-color: $color-form-white-primary;
+    border-color: $color-form-white-primary;
+  }
 }
-.input-group-addon.input-group-success {
-  background-color: #fcfefb;
-  border-color: #fcfefb;
-}
-.input-group-addon.input-group-info {
-  background-color: #a7e5d6;
-  border-color: #a7e5d6;
-}
-.input-group-addon.input-group-warning {
-  background-color: #ffffff;
-  border-color: #ffffff;
-}
-.input-group-addon.input-group-danger {
-  background-color: #ffffff;
-  border-color: #ffffff;
-}
-.input-group-addon.input-group-primary {
-  background-color: #fcfefe;
-  border-color: #fcfefe;
-}
+
 .radio,
 .radio-inline,
 .checkbox,
 .checkbox-inline {
   margin-right: 10px;
 }
+
 .radio input,
 .radio-inline input,
 .checkbox input,
 .checkbox-inline input {
   margin-top: 2px;
 }
+
 .radio label,
 .radio-inline label,
 .checkbox label,
 .checkbox-inline label {
   display: inline-block;
   font-size: 13px;
-  vertical-align: 2px;
   margin: 0;
+  vertical-align: 2px;
 }
+
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-left: 0;
 }
+
 .req:after {
+  color: $color-form-validation;
   content: ' *';
-  color: #c0392b;
   font-size: 17px;
   line-height: 15px;
 }
+
 .help-block {
+  color: $color-form-gray;
   font-size: 12px;
-  color: #888;
   margin-bottom: 0;
 }
+
 .has-warning .form-control,
 .has-error .form-control,
 .has-info .form-control,
@@ -111,78 +132,96 @@ fieldset[disabled] .form-control {
 .has-success .form-control:focus {
   box-shadow: none;
 }
+
 .has-warning .form-control {
-  border: 1px solid #f6bb42;
+  border: 1px solid $color-form-warning;
 }
+
 .has-warning .form-control:focus {
-  border-color: #e19b0b;
+  border-color: $color-form-warning-focus;
 }
+
 .has-warning .help-block,
 .has-warning .control-label,
 .has-warning .radio,
 .has-warning .checkbox,
 .has-warning .radio-inline,
 .has-warning .checkbox-inline {
-  color: #f6bb42;
+  color: $color-form-warning;
 }
+
 .has-warning .form-control-feedback {
-  color: #f6bb42;
+  color: $color-form-warning;
 }
+
 .has-error .form-control {
-  border: 1px solid #da4453;
+  border: 1px solid $color-form-error;
 }
+
 .has-error .form-control:focus {
-  border-color: #af2331;
+  border-color: $color-form-danger;
 }
+
 .has-error .help-block,
 .has-error .control-label,
 .has-error .radio,
 .has-error .checkbox,
 .has-error .radio-inline,
 .has-error .checkbox-inline {
-  color: #da4453;
+  color: $color-form-error;
 }
+
 .has-error .form-control-feedback {
-  color: #da4453;
+  color: $color-form-error;
 }
+
 .has-info .form-control {
-  border: 1px solid #37bc9b;
+  border: 1px solid $color-form-info;
 }
+
 .has-info .form-control:focus {
-  border-color: #26816a;
+  border-color: $color-form-info-focus;
 }
+
 .has-info .help-block,
 .has-info .control-label,
 .has-info .radio,
 .has-info .checkbox,
 .has-info .radio-inline,
 .has-info .checkbox-inline {
-  color: #37bc9b;
+  color: $color-form-info;
 }
+
 .has-info .form-control-feedback {
-  color: #37bc9b;
+  color: $color-form-info;
 }
+
 .has-success .form-control {
-  border: 1px solid #8cc152;
+  border: 1px solid $color-form-success;
 }
+
 .has-success .form-control:focus {
-  border-color: #659234;
+  border-color: $color-form-success-focus;
 }
+
 .has-success .help-block,
 .has-success .control-label,
 .has-success .radio,
 .has-success .checkbox,
 .has-success .radio-inline,
 .has-success .checkbox-inline {
-  color: #8cc152;
+  color: $color-form-success;
 }
+
 .has-success .form-control-feedback {
-  color: #8cc152;
+  color: $color-form-success;
 }
+
 .has-feedback .form-control-feedback {
-  top: auto;
   bottom: 0;
+  top: auto;
 }
+
 .input-group {
   width: 100%;
 }
