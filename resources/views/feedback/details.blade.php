@@ -27,7 +27,25 @@
 
           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. anything embarrassing hidden in the middle of text uses a dictionary of over Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reThe generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. <strong>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</strong> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-      </div>
+      
+            {{-- Social media share --}}
+                {{-- Twitter --}}
+                 <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ route('feedback.show', ['fid' => $item->id]) }}" data-text="{{ $item->title }}" data-via="idevelopment">
+                    Tweet
+                 </a>
+
+                 <script>
+                     !function (d, s, id) {
+                         var js,
+                         fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+
+                         if (!d.getElementById(id)) {
+                             js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs);
+                         }
+                     }(document, 'script', 'twitter-wjs');
+                 </script>
+            {{-- Social media share --}}
+     </div>
      <!-- end desc -->
   </div>
   <!-- end feedback-box -->
